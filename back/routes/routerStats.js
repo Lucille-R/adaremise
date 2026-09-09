@@ -23,12 +23,15 @@ routerStats.get('/', async (req,res,next) => {
         `);
 
         const nbObjetRayon = await pool.query(`
-            SELECT COUNT(statut) FROM objet
-            WHERE status = "en_rayon"`)
+            SELECT COUNT(statut) AS nombre_objet_rayon
+            FROM objet
+            WHERE statut = 'en_rayon'`);
+
         res.status(200).json({
             objetsStatut: statut.rows,
             poidsTotal: Number(poidsTotal.rows[0].poids_total_kg),
-            poidsDetourne: Number(poidsDetourne.rows[0].poids_detourne_kg)
+            poidsDetourne: Number(poidsDetourne.rows[0].poids_detourne_kg),
+            nbObjetRayon: Number(nbObjetRayon.rows[0].nombre_objet_rayon)
         });
 
 
