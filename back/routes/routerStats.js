@@ -3,7 +3,7 @@ import { pool } from "./../server/db.js"
 
 export const routerStats = express.Router();
 
-routerStats.get('/', async (req,res,next) => {
+routerStats.get('/stats', async (req,res) => {
     
         const statut = await pool.query(`
             SELECT statut, COUNT(*) AS nombre
