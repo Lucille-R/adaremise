@@ -1,0 +1,43 @@
+@url = http://localhost:3000
+
+###================== POST ======================
+
+###-------------- Créer un dépôt ----------------
+### Créer un dépôt valide (personne_id existant, type valide)
+POST {{url}}/api/depots
+Content-Type: application/json
+
+{
+	"personne_id": 1,
+	"date_depot": "2026-09-06",
+	"type": "boutique"
+}
+
+### CAS D'ERREUR : champ obligatoire manquant → doit renvoyer 400
+POST {{url}}/api/depots
+Content-Type: application/json
+
+{
+	"personne_id": 1,
+	"date_depot": "2026-09-06"
+}
+
+### CAS D'ERREUR : type de depot invalide → doit renvoyer 400
+POST {{url}}/api/depots
+Content-Type: application/json
+
+{
+	"personne_id": 1,
+	"date_depot": "2026-09-06",
+	"type": "asso"
+}
+
+### CAS D'ERREUR : personne_id inexistant → doit renvoyer 404
+POST {{url}}/api/depots
+Content-Type: application/json
+
+{
+	"personne_id": 9999,
+	"date_depot": "2026-09-06",
+	"type": "boutique"
+}
