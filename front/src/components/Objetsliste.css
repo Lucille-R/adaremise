@@ -1,0 +1,8 @@
+li {
+    color: blanchedalmond;
+    background-color: coral;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 2rem;
+    list-style-type: none;
+}
