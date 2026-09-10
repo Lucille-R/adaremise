@@ -1,0 +1,110 @@
+@url = http://localhost:3000
+
+###================== POST ======================
+
+###-------------- Créer un dépôt ----------------
+### Créer un dépôt valide (personne_id existant, type valide) → doit renvoyer 201
+POST {{url}}/api/depots
+Content-Type: application/json
+
+{
+	"personne_id": 1,
+	"date_depot": "2026-09-06",
+	"type": "boutique"
+}
+
+### CAS D'ERREUR : champ obligatoire manquant → doit renvoyer 400
+POST {{url}}/api/depots
+Content-Type: application/json
+
+{
+	"personne_id": 1,
+	"date_depot": "2026-09-06"
+}
+
+### CAS D'ERREUR : type de depot invalide → doit renvoyer 400
+POST {{url}}/api/depots
+Content-Type: application/json
+
+{
+	"personne_id": 1,
+	"date_depot": "2026-09-06",
+	"type": "asso"
+}
+
+### CAS D'ERREUR : personne_id inexistant → doit renvoyer 404
+POST {{url}}/api/depots
+Content-Type: application/json
+
+{
+	"personne_id": 9999,
+	"date_depot": "2026-09-06",
+	"type": "boutique"
+}
+
+
+###------------ Ajouter un objet au depot --------------
+### Ajouter un objet à un dépôt existant → doit renvoyer 201
+POST {{url}}/api/depots/1/objets
+Content-Type: application/json
+
+{
+	"libelle": "Chaise en bois",
+	"poids_kg": 3.5,
+	"etat_arrivee": "bon_etat",
+	"categorie_id": 1
+}
+
+### CAS D'ERREUR : champ obligatoire manquant (poids absent) → doit renvoyer 400
+POST {{url}}/api/depots/1/objets
+Content-Type: application/json
+
+{
+	"libelle": "Table en bois",
+	"etat_arrivee": "bon_etat",
+	"categorie_id": 1
+}
+
+### CAS D'ERREUR : etat_arrivee invalide → doit renvoyer 400
+POST {{url}}/api/depots/1/objets
+Content-Type: application/json
+
+{
+	"libelle": "Table en bois",
+	"poids_kg": 3.5,
+	"etat_arrivee": "cassee",
+	"categorie_id": 1
+}
+
+### CAS D'ERREUR : poids en format non numérique → doit renvoyer 400
+POST {{url}}/api/depots/1/objets
+Content-Type: application/json
+
+{
+	"libelle": "Chaise en bois",
+	"poids_kg": "3.5",
+	"etat_arrivee": "bon_etat",
+	"categorie_id": 1
+}
+
+### CAS D'ERREUR : id dépôt inexistant → doit renvoyer 404
+POST {{url}}/api/depots/9999/objets
+Content-Type: application/json
+
+{
+	"libelle": "Table en bois",
+	"poids_kg": 3.5,
+	"etat_arrivee": "bon_etat",
+	"categorie_id": 1
+}
+
+### CAS D'ERREUR : id catégorie inexistant → doit renvoyer 404
+POST {{url}}/api/depots/1/objets
+Content-Type: application/json
+
+{
+	"libelle": "Table en bois",
+	"poids_kg": 3.5,
+	"etat_arrivee": "bon_etat",
+	"categorie_id": 99
+}
