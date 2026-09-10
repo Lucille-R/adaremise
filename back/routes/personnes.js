@@ -12,5 +12,5 @@ routerPersonnes.get("/personnes", async (req, res) => {
 		SELECT id, nom, prenom
 		FROM personne`);
 	
-	return res.status(200).json(rows);
+	res.status(200).json(rows);
 });
