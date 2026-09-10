@@ -54,11 +54,24 @@
     box-shadow: 5px 5px 5px black;
 }
 
+.stats-listStatus {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-bgLight);
+
+        h4 {
+            font-size: x-large;
+            padding-top: 10px;
+        }
+
+}
+
 .stats-donneeTableau {
     display: flex;
     flex-direction: row;
-    background-color: var(--color-bgLight);
-    justify-content: space-evenly;
+    gap: 20px;
     align-items: center;
     margin-bottom: 50px;
 }

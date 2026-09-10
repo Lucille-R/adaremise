@@ -36,6 +36,8 @@ const Stats = () => {
                     <p className="stats-detailGenData ">{poidsTotal}</p>
                 </article>
             </div>
+            <div className="stats-listStatus">
+                <h4>Classification par statut :</h4>
                 <dl className="stats-donneeTableau">
                     {objetStatut.map((element, index) => (
                         <div key={index} className="stats-cardData">
@@ -44,7 +46,7 @@ const Stats = () => {
                         </div>
                     ))}
                 </dl>
-
+            </div>
         </section>
     )}
 
