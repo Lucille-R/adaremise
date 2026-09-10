@@ -1,11 +1,11 @@
 //============== IMPORTS ====================
 import express from "express";
 import "dotenv/config"; // Va servir à importer le numéro du port (3000) au lieu de l'écrire en dur dans app.listen(3000, ...)
-import { routerCategories } from "./routes/categories.js"
-import { routerObjets } from "./routes/objets.js";
-import { routerDepots } from "./routes/depots.js";
-import { routerPersonnes } from "./routes/personnes.js";
-import { routerStats } from "./routes/stats.js";
+import { routerCategories } from "./../routes/categories.js"
+import { routerObjets } from "./../routes/objets.js";
+import { routerDepots } from "./../routes/depots.js";
+import { routerPersonnes } from "./../routes/personnes.js";
+import { routerStats } from "./../routes/stats.js";
 
 
 //============= MIDDLEWARE ====================

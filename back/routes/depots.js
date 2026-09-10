@@ -1,6 +1,5 @@
 import express from "express";
 import { pool } from "../server/db.js";
-import { debugPort } from "node:process";
 
 export const routerDepots = express.Router();
 
@@ -39,7 +38,7 @@ routerDepots.post("/depots", async (req, res) => {
 		RETURNING *`, 
 		[date_depot, type, personne_id]);
 	
-	return res.status(201).json(rows[0]);
+	res.status(201).json(rows[0]);
 
 });
 
@@ -92,6 +91,6 @@ routerDepots.post("/depots/:id/objets", async (req, res) => {
 		RETURNING *`,
 		[id, libelle, poids_kg, etat_arrivee, categorie_id]);
 	
-	return res.status(201).json(rows[0]);
+	res.status(201).json(rows[0]);
 
 });
