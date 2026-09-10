@@ -5,7 +5,7 @@ export const routerObjets = express.Router();
 
 // Route qui permet d'effectuer une recherche de la liste des objets avec une possibilitée de filtre le statut et/ou la categorie
 
-router.get('/objets', async(req,res) => {
+routerObjets.get('/objets', async(req,res) => {
     
     const statut = req.query.statut || null;
     const categorieId = req.query.categorie_id || null;
@@ -16,7 +16,7 @@ router.get('/objets', async(req,res) => {
 
 // Route qui permet d'effectuer une recherche d'objet avec son id en paramêtre
 
-router.get('/objets/:id', async (req,res) => {
+routerObjets.get('/objets/:id', async (req,res) => {
 
     const { id } = req.params;
 
@@ -30,7 +30,7 @@ router.get('/objets/:id', async (req,res) => {
 
 });
 
-router.patch ('/objets/:id/statut' , async (req,res) => {
+routerObjets.patch ('/objets/:id/statut' , async (req,res) => {
     const { id } = req.params;
     const { statut } = req.body;
 
