@@ -1,15 +1,28 @@
 import './App.css';
 /* import Objetsliste from './components/Objetsliste' */
+import { useState } from 'react';
 import { Routes, Route } from "react-router";
-import Stats from './components/Stats.jsx';
-import Objetsliste from './components/Objetsliste.jsx';
+import Benevoles from './components/Benevoles.jsx'
 
 
 function App() {
 
+const [benevole, setBenevole] = useState(null)
+
+const handleSelection = (nom, prenom) => {
+  setBenevole({nom, prenom});
+}
+
+  if(!benevole) {
+    return (
+          <Benevoles onSelect={handleSelection} />
+        )}
+
   return (
     <>
       <Navbar />
+
+
 
       <main>
          <Routes>

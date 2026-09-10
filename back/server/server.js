@@ -9,6 +9,7 @@ import { routerObjets } from "./../routes/objets.js";
 import { routerDepots } from "./../routes/depots.js";
 import { routerPersonnes } from "./../routes/personnes.js";
 import { routerStats } from "./../routes/stats.js";
+import { routerBenevoles } from "./../routes/benevoles.js";
 
 
 
@@ -23,10 +24,11 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 //============= MONTAGE ROUTES ================
 
 // app.use("/api", routerCategories);
-app.use("/api", routerObjets);
+// app.use("/api", routerObjets);
 // app.use("/api", routerDepots);
 // app.use("/api", routerPersonnes);
 // app.use("/api", routerStats);
+app.use("/api", routerBenevoles);
 
 
 //============= MIDDLEWARE D'ERREUR ================
