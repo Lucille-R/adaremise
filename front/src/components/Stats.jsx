@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, Fragment } from "react";
+import { useState, useEffect, Fragment } from "react";
 import "./Stats.css"
 
 const Stats = () => {
@@ -14,6 +14,7 @@ const Stats = () => {
         const data = await fetch (`${API}/stats`);
         const dataJson = await data.json();
 
+
         setObjetStatut(dataJson.objetsStatut);
         setPoidsTotal(dataJson.poidsTotal);
         setNbObjetRayon(dataJson.nbObjetRayon);    
@@ -24,25 +25,25 @@ const Stats = () => {
     }, []);
 
     return (
-        <section>
-            <div className="enRayon">
-                <p>Objets en rayon :</p>
-                <p>{nbObjetRayon}</p>
+        <section className="stats-stats">
+            <div className="stats-generalData">
+                <article className="stats-background">
+                    <p>Objets en rayon :</p>
+                    <p>{nbObjetRayon}</p>
+                </article>
+                <article className="stats-background">
+                    <p>Poids Total :</p>
+                    <p>{poidsTotal}</p>
+                </article>
             </div>
-            <div className="poidsTotal">
-                <p>Poids Total :</p>
-                <p>{poidsTotal}</p>
-            </div>
-            <div>
                 <dl className="stats-donneeTableau">
                     {objetStatut.map((element, index) => (
-                        <Fragment key={index}>
+                        <div key={index} className="stats-cardData">
                             <dt className="donneeTitle">{element.statut}</dt>
                             <dd className="donneeDetail">{element.nombre}</dd>
-                        </Fragment>
+                        </div>
                     ))}
                 </dl>
-            </div>
 
         </section>
     )}
