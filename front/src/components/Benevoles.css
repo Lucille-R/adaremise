@@ -1,0 +1,38 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+    --color-bgLight :grey;
+    --color-bgDark : rgb(60, 60, 60);
+    --color-textData : rgb(51, 241, 178);
+}
+
+.benevoles-title {
+    justify-self: center;
+    margin: 50px;
+    font-size: xx-large;
+}
+
+.benevoles-boutonDisplay {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px 10px;
+    justify-content: center;
+}
+
+.benevoles-boutonBenevole {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    width: 225px;
+    height: 150px;
+    padding: 20px;
+    font-size: larger;
+}
