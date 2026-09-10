@@ -1,0 +1,7 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API La Remise",
+    "version": "1.0.0",
+    "description": "API de gestion de la ressourcerie La Remise"}
+}

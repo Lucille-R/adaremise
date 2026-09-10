@@ -2,8 +2,9 @@
 import express from "express";
 import cors from 'cors';
 import "dotenv/config"; // Va servir à importer le numéro du port (3000) au lieu de l'écrire en dur dans app.listen(3000, ...)
+import swaggerUi from "swagger-ui-express";
+import swaggerDocument from "./../../swagger.json" with { type: "json" };
 
-import { routerCategories } from "./../routes/categories.js"
 import { routerObjets } from "./../routes/objets.js";
 import { routerDepots } from "./../routes/depots.js";
 import { routerPersonnes } from "./../routes/personnes.js";
@@ -16,6 +17,7 @@ import { routerStats } from "./../routes/stats.js";
 const app = express();
 app.use(express.json());
 app.use(cors());
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 
 //============= MONTAGE ROUTES ================
