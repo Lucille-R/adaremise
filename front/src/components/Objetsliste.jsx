@@ -17,7 +17,7 @@ function Objetsliste () {
     return (
         <ul>
             {objets.map((objet) =>(
-                <li key={objet.id}>{objet.libelle} - Catégorie : {objet.categorie} - Prix : {objet.prix} € - Statut de l'objet : {objet.statut} </li>
+                <li key={objet.id} className="objets">{objet.libelle} - Catégorie : {objet.categorie} - Prix : {objet.prix} € - Statut de l'objet : {objet.statut} </li>
 
             ))}
         </ul>
