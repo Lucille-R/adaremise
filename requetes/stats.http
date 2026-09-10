@@ -1,4 +1,8 @@
-@baseUrl = http://localhost:3000
 
+@baseUrl = http://localhost:3000/api
+
+###================GET=======================
+
+### Apporte toute les données depuis stats - ObjetsStatut, PoidsTotal, PoidsDetourné, nbObjetRayon
 GET {{baseUrl}}/stats
 
