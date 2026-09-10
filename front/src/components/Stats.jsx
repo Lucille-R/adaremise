@@ -27,20 +27,20 @@ const Stats = () => {
     return (
         <section className="stats-stats">
             <div className="stats-generalData">
-                <article className="stats-background">
-                    <p>Objets en rayon :</p>
-                    <p>{nbObjetRayon}</p>
+                <article className="stats-generalDatablocks">
+                    <h4 className="stats-titleGenData">Objets en rayon :</h4>
+                    <p className="stats-detailGenData ">{nbObjetRayon}</p>
                 </article>
-                <article className="stats-background">
-                    <p>Poids Total :</p>
-                    <p>{poidsTotal}</p>
+                <article className="stats-generalDatablocks">
+                    <h4 className="stats-titleGenData">Poids Total :</h4>
+                    <p className="stats-detailGenData ">{poidsTotal}</p>
                 </article>
             </div>
                 <dl className="stats-donneeTableau">
                     {objetStatut.map((element, index) => (
                         <div key={index} className="stats-cardData">
-                            <dt className="donneeTitle">{element.statut}</dt>
-                            <dd className="donneeDetail">{element.nombre}</dd>
+                            <dt className="stats-donneeTitle">{element.statut} :</dt>
+                            <dd className="stats-donneeDetail">{element.nombre}</dd>
                         </div>
                     ))}
                 </dl>

@@ -7,7 +7,17 @@
 }
 
 :root {
-    --color-bg :grey;
+    --color-bgLight :grey;
+    --color-bgDark : rgb(60, 60, 60);
+    --color-textData : rgb(51, 241, 178);
+}
+
+.stats-stats {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-bgDark);
+    gap: 100px;
+
 }
 
 .stats-generalData {
@@ -15,30 +25,42 @@
     flex-direction: row;
     justify-content: space-evenly;
     margin: 25px 0px;
+
+
+        .stats-titleGenData {
+            font-size: larger;
+            font-weight: bold;
+        }
+
+        .stats-detailGenData {
+            color: var(--color-textData);
+            font-weight: bold;
+            font-size: xx-large;
+            text-shadow: 1px 1px 1px  rgba(51, 241, 178, 0.416);
+        }
 }
 
-.stats-stats {
-    display: flex;
-    flex-direction: column;
-
-}
-
-.stats-background {
-    background-color: var(--color-bg);
+.stats-generalDatablocks {
+    background-color: var(--color-bgLight);
     border-radius: 6px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10px; 
+    width: 200px;
+    height: 100px;
+    padding: 10px;
+    gap: 15px;
+    box-shadow: 5px 5px 5px black;
 }
 
 .stats-donneeTableau {
     display: flex;
     flex-direction: row;
-    background-color: var(--color-bg);
+    background-color: var(--color-bgLight);
     justify-content: space-evenly;
     align-items: center;
+    margin-bottom: 50px;
 }
 
 .stats-cardData {
@@ -46,8 +68,19 @@
     flex-direction: column;
     align-items: center;
     background-color: wheat;
-    width: 100px;
-    padding: 10px;
-    margin: 5px 0px;
+    width: 150px;
+    padding: 10px ;
+    margin: 20px 0px;
     border-radius: 6px;
+    box-shadow: 5px 5px 5px black;
+    
+        .stats-donneeTitle {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .stats-donneeTitle::first-letter {
+            font-size: large;
+            text-transform: capitalize;
+        }
 }
