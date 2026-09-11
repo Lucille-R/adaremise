@@ -24,7 +24,7 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 //============= MONTAGE ROUTES ================
 
 // app.use("/api", routerCategories);
-// app.use("/api", routerObjets);
+app.use("/api", routerObjets);
 // app.use("/api", routerDepots);
 // app.use("/api", routerPersonnes);
 // app.use("/api", routerStats);
