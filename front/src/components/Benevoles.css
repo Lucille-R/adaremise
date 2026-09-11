@@ -7,9 +7,12 @@
 }
 
 :root {
-    --color-bgLight :grey;
-    --color-bgDark : rgb(60, 60, 60);
-    --color-textData : rgb(51, 241, 178);
+    --color-bgLight :#56ADC4;
+    --color-bgLightDesature :#7DB5C7;
+    /* --color-bgDark : rgb(60, 60, 60); */
+    --color-text : rgb(51, 241, 178);
+    --color-active : #F57B33;
+    --color-activeDesature : #FA8B48;
 }
 
 .benevoles-title {
@@ -30,9 +33,18 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background-color: var(--color-bgLightDesature);
+    color: var(--color-active);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.621);
     gap: 20px;
     width: 225px;
     height: 150px;
     padding: 20px;
     font-size: larger;
+    border: 2px solid rgb(43, 128, 198);
+    border-radius: 6px;
+}
+
+.benevoles-boutonBenevole:active {
+    background-color: var(--color-bgLight);
 }
