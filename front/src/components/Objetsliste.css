@@ -1,8 +1,12 @@
+.filtre_objets_box {
+    display: flex;
+}
+
 li.objets {
     color: blanchedalmond;
-    background-color: coral;
+    background-color: #56ADC4;
     border-radius: 1rem;
     padding: 1rem;
-    margin: 2rem;
+    margin: 1rem;
     list-style-type: none;
 }
