@@ -6,6 +6,7 @@ import Benevoles from './components/Benevoles.jsx'
 import Objetsliste from './components/Objetsliste.jsx'
 // import CreationDepot from './components/CreationDepot.jsx'
 import Stats from './components/Stats.jsx'
+import Navbar from './components/Navbar.jsx';
 
 
 function App() {
@@ -26,7 +27,7 @@ const handleSelection = (nom, prenom) => {
 
   return (
     <>
-      {/* <Navbar /> */}
+      <Navbar />
 
 
 
