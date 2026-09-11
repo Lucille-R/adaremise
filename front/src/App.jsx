@@ -7,6 +7,7 @@ import Objetsliste from './components/Objetsliste.jsx'
 // import CreationDepot from './components/CreationDepot.jsx'
 import Stats from './components/Stats.jsx'
 import Navbar from './components/Navbar.jsx';
+import Entete from './components/Entete.jsx';
 
 
 function App() {
@@ -19,6 +20,10 @@ const handleSelection = (nom, prenom) => {
   setBenevole({nom, prenom});
 }
 
+const handleDeconnection = (reset) => {
+  setBenevole(reset)
+}
+
 // --- Verification de l'etat de la variable benevole (null ou non)
   if(!benevole) {
     return (
@@ -27,6 +32,7 @@ const handleSelection = (nom, prenom) => {
 
   return (
     <>
+      <Entete benevole={benevole} deconnection={handleDeconnection} />
       <Navbar />
 
 
@@ -37,7 +43,6 @@ const handleSelection = (nom, prenom) => {
            <Route path="/objets" element={<Objetsliste />} />
            {/* <Route path="/depots" element={<CreationDepot />} /> */}
            <Route path="/stats" element={<Stats />} />
-           {/* <Route /> */}
            <Route path="*" element={<p>Page introuvable</p>} /> {/* path="*" attrape tout ce qu'aucune autre route n'a reconnu. Elle se place toujours en dernier. */}
          </Routes>
       </main>

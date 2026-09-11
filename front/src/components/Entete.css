@@ -1,0 +1,51 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+    --color-bgLight :#56ADC4;
+    --color-bgLightDesature :#7DB5C7;
+    /* --color-bgDark : rgb(60, 60, 60); */
+    --color-text : rgb(51, 241, 178);
+    --color-active : #F57B33;
+    --color-activeDesature : #FA8B48;
+}
+
+.entete-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.entete-logo {
+    width: 200px;
+}
+
+.entete-identifiant {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.entete-benevole {
+    color: var(--color-active);
+    font-weight: bold;
+    font-size: larger;
+    margin-bottom: 5px;
+}
+
+.entete-decoImg {
+    width: 25px;
+}
+
+.entete-btnRemove {
+    background-color: transparent;
+    border: none;
+}
+
