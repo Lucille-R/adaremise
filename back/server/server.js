@@ -11,6 +11,7 @@ import { routerDepots } from "./../routes/depots.js";
 import { routerPersonnes } from "./../routes/personnes.js";
 import { routerStats } from "./../routes/stats.js";
 import { routerBenevoles } from "./../routes/benevoles.js";
+import { routerCategories } from "../routes/categories.js";
 
 
 //=========== CONFIGURATION SWAGGER ==============
@@ -33,7 +34,7 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 //============= MONTAGE ROUTES ================
 
-/* app.use("/api", routerCategories); */
+app.use("/api", routerCategories);
 app.use("/api", routerObjets);
 // app.use("/api", routerDepots);
 // app.use("/api", routerPersonnes);
