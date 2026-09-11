@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-import { Link } from "react-router";
+import { NavLink } from "react-router";
 import "./Navbar.css"
 
 const Navbar = () => {
@@ -7,9 +6,12 @@ const Navbar = () => {
 
   return (
     <nav className="navbar-navigation">
-      <Link className="navbar-boutonNavigation" to="/">Les Objets</Link>
-      <Link className="navbar-boutonNavigation" to="/depots">Dépôt</Link>
-      <Link className="navbar-boutonNavigation" to="/stats">Statistiques</Link>
+      <NavLink to="/objets" className={function (etat) {
+        return etat.isActive ? "navbar-boutonNavigation navbar-boutonActive" : "navbar-boutonNavigation" }}>Les Objets</NavLink>
+      <NavLink to="/depots" className={function (etat) {
+        return etat.isActive ? "navbar-boutonNavigation navbar-boutonActive" : "navbar-boutonNavigation" }}>Dépôt</NavLink>
+      <NavLink to="/stats" className={function (etat) {
+        return etat.isActive ? "navbar-boutonNavigation navbar-boutonActive" : "navbar-boutonNavigation" }}>Statistiques</NavLink>
     </nav>
   );
 }

@@ -39,3 +39,7 @@
     box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 0.497);
     background-color: var(--color-bgLight);
 }
+
+.navbar-boutonActive {
+    background-color: #2f5e6b;
+}
