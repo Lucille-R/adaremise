@@ -3,6 +3,44 @@ import { pool } from "./../server/db.js"
 
 export const routerStats = express.Router();
 
+/**
+ * @swagger
+ * "/api/stats": {
+ *   "get": {
+ *     "summary": "Recupere les statistiques globales des objets",
+ *     "tags": ["Stats"],
+ *     "responses": {
+ *       "200": {
+ *         "description": "Statistiques recuperees avec succes",
+ *         "content": {
+ *           "application/json": {
+ *             "schema": {
+ *               "type": "object",
+ *               "properties": {
+ *                 "objetsStatut": {
+ *                   "type": "array",
+ *                   "items": {
+ *                     "type": "object",
+ *                     "properties": {
+ *                       "statut": { "type": "string", "example": "en_rayon" },
+ *                       "nombre": { "type": "integer", "example": 12 }
+ *                     }
+ *                   }
+ *                 },
+ *                 "poidsTotal": { "type": "number", "example": 152.4 },
+ *                 "poidsDetourne": { "type": "number", "example": 43.2 },
+ *                 "nbObjetRayon": { "type": "integer", "example": 8 }
+ *               }
+ *             }
+ *           }
+ *         }
+ *       },
+ *       "500": { "description": "Erreur de connexion au serveur" }
+ *     }
+ *   }
+ * }
+ */
+
 routerStats.get('/stats', async (req,res) => {
     
         const statut = await pool.query(`
@@ -10,6 +48,8 @@ routerStats.get('/stats', async (req,res) => {
             FROM objet
             GROUP BY statut
         `);
+
+        console.log(typeof statut.rows[0].nombre);
 
         const poidsTotal = await pool.query(`
             SELECT SUM(poids_kg) AS poids_total_kg
