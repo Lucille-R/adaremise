@@ -6,6 +6,18 @@ export const routerPersonnes = express.Router();
 
 //========================= GET ==============================
 
+/**
+ * @swagger
+ * "/api/personnes": {
+ *    "get": {
+ *     "summary": "Liste toutes les personnes",
+ *     "responses": {
+ *       "200": { "description": "Liste des personnes récupérée avec succès"}
+ *     }
+ *   }
+ * }
+ */
+
 // Affichage de la liste des personnes (id, nom, prenom) :
 routerPersonnes.get("/personnes", async (req, res) => {
 	const { rows } = await pool.query(`
