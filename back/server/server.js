@@ -27,7 +27,7 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use("/api", routerObjets);
 // app.use("/api", routerDepots);
 // app.use("/api", routerPersonnes);
-// app.use("/api", routerStats);
+app.use("/api", routerStats);
 app.use("/api", routerBenevoles);
 
 
