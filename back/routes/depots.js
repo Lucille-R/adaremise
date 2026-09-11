@@ -5,6 +5,36 @@ export const routerDepots = express.Router();
 
 //========================= POST =============================
 
+/**
+ * @swagger
+ * "/api/depots": {
+ *   "post": {
+ *     "summary": "Crée un nouveau dépôt",
+ *     "requestBody": {
+ *       "required": true,
+ *       "content": {
+ *         "application/json": {
+ *           "schema" : {
+ *             "type": "object",
+ *             "required": ["personne_id", "date_depot", "type"],
+ *             "properties": {
+ *               "personne_id": { "type": "integer", "example": 1 },
+ *               "date_depot": { "type": "string", "example": "2026-09-06" },
+ *               "type": { "type": "string", "enum": ["boutique", "domicile"] }
+ *             } 
+ *           }
+ *         }
+ *       }
+ *     },
+ *     "responses": {
+ *       "201": { "description": "Dépôt créé avec succès" },
+ *       "400": { "description": "Champ obligatoire manquant, ou type de dépôt invalide" },
+ *       "404": { "description": "L'identifiant de personne n'existe pas" }
+ *     }
+ *   }
+ * }
+ */
+
 //------------------------------------------------------------
 // Créer un nouveau dépôt (personne_id, date_depot, type)
 //------------------------------------------------------------
@@ -41,6 +71,47 @@ routerDepots.post("/depots", async (req, res) => {
 	res.status(201).json(rows[0]);
 
 });
+
+
+/**
+ * @swagger
+ * "/api/depots/{id}/objets": {
+ *   "post": {
+ *     "summary": "Ajoute un objet à un dépôt existant",
+ *     "parameters": [
+ *       {
+ *         "name": "id",
+ *         "in": "path",
+ *         "required": true,
+ *         "schema": { "type": "integer" },
+ *         "description": "L'identifiant du dépôt"
+ *       }
+ *     ],
+ *     "requestBody": {
+ *       "required": true,
+ *       "content": {
+ *         "application/json": {
+ *           "schema": {
+ *             "type": "object",
+ *             "required": ["libelle", "poids_kg", "etat_arrivee", "categorie_id"],
+ *             "properties": {
+ *               "libelle": { "type": "string", "example": "Chaise en bois" },
+ *               "poids_kg": { "type": "number", "example": 3.5 },
+ *               "etat_arrivee": { "type": "string", "enum": ["bon_etat", "a_reparer", "hors_service"] },
+ *               "categorie_id": { "type": "integer", "example": 1 }
+ *             }
+ *           }
+ *         }
+ *       }
+ *     },
+ *     "responses": {
+ *       "201": { "description": "Objet ajouté avec succès" },
+ *       "400": { "description": "Champ obligatoire manquant, état d'arrivée invalide, ou poids non numérique" },
+ *       "404": { "description": "L'identifiant de dépôt ou de catégorie n'existe pas" }
+ *     }
+ *   }
+ * }
+ */
 
 //------------------------------------------------------------
 // Ajouter un objet au depot (depot_id, libelle, poids_kg, etat_arrivee, categorie_id) - statut a une valeur 'arrive' par defaut
