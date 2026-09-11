@@ -24,8 +24,8 @@ const Benevoles = ({onSelect}) => {
         <>
         <h2 className="benevoles-title">Identifiez-vous :</h2>
         <section className="benevoles-boutonDisplay">
-            {listeBenevoles.map(element => 
-                <button className="benevoles-boutonBenevole" type="button" onClick={() => onSelect(element.nom, element.prenom)}>{element.nom} {element.prenom}</button>
+            {listeBenevoles.map((element, index) => 
+                <button key={index} className="benevoles-boutonBenevole" type="button" onClick={() => onSelect(element.nom, element.prenom)}>{element.nom} {element.prenom}</button>
             )}
         </section>
         </>
