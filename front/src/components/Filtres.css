@@ -1,0 +1,12 @@
+.filtres_box {
+    color: blanchedalmond;
+    background-color: #F57B33;
+    padding: 1rem;
+}
+
+select {
+    color: blanchedalmond;
+    background-color: #FA8B48;
+    border-radius: 1rem;
+    padding: 0.5rem;
+}
