@@ -10,3 +10,9 @@ select {
     border-radius: 1rem;
     padding: 0.5rem;
 }
+
+p {
+    margin-top: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
