@@ -18,17 +18,19 @@ const Benevoles = ({onSelect}) => {
 
             const data = await response.json();
             setListeBenevoles(data);
+
     } catch (error) {
         console.error(error.message);
         setErreur(error.message)
     }
 
     }
-
+    // --- On charge la liste des benevoles au chargement de la page --- 
     useEffect(() =>{
         chargerListe()
     }, [])
 
+    // --- en cas d'erreur on la retourne indiquant qu'il y a un soucis ---
     if(erreur){
         return(
             <>
@@ -41,6 +43,7 @@ const Benevoles = ({onSelect}) => {
         <>
         <h2 className="benevoles-title">Identifiez-vous :</h2>
         <section className="benevoles-boutonDisplay">
+            {/* on creer les boutons benevoles qui retourne le nom et prenom apres le click */}
             {listeBenevoles.map((element) => 
                 <button key={element.id} className="benevoles-boutonBenevole" type="button" onClick={() => onSelect(element.nom, element.prenom)}>{element.nom} {element.prenom}</button>
             )}
