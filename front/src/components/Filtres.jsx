@@ -7,7 +7,7 @@ export default function Filtres ({ statut, onStatutChange, categories, categorie
         <div className="filtres_box">
             
             <h2>Filtres</h2>
-            <p>Par statut :</p>
+            <p className="filtres-filtreTitre">Par statut :</p>
             <select value={statut} onChange={(e) => onStatutChange(e.target.value)}>
                 <option value="">Tous statuts</option>
                 <option value="arrive">Arrivé</option>
@@ -17,7 +17,7 @@ export default function Filtres ({ statut, onStatutChange, categories, categorie
                 <option value="recycle">Recycle</option>
             </select>
             
-            <p>Par catégorie</p>
+            <p className="filtres-filtreTitre">Par catégorie :</p>
 
             <select value={categorieFiltre} onChange={(e) => onCategorieChange(e.target.value)}>
                 <option value="">Toutes catégories</option>
