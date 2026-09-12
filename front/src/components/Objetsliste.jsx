@@ -77,13 +77,20 @@ function Objetsliste () {
         
             <Filtres statut={statutFiltre} onStatutChange={handleStatutChange} categories={categories} categorieFiltre={categorieFiltre} onCategorieChange={handleCategorieChange}/>
             <ul>
+                <h2 className="objetsListeTitre">Stock de La Remise</h2>
+
+                <section className="objetsListeOnboarding">
+                        <p className="objetsListeOnboardingText">Veuillez trouver ci dessous la liste complète des objets présent dans notre stock.
+                            Vous pouvez filtrer chaque resultat grâce à la barre située à votre gauche, ainsi qu'obtenir plus d'informations sur un objets particulier en cliquant sur son bandeau.
+                        </p>
+                </section>
                 {objets.map((objet) =>(
                     <li 
                     key={objet.id} 
                     className="objetsliste-objet" 
                     onClick={() => handleObjetChange(objet.id)}>
                         {objet.libelle} --- Catégorie : {objet.categorie} --- Prix : {objet.prix} € --- Statut de l'objet : {objet.statut} 
-                        {selectObjet === objet.id && (` --- Etat : ${selectObjetContent.etat_arrivee} --- Date de mise en rayon : ${new Date(selectObjetContent.date_mise_rayon).toLocaleDateString('fr-FR')}`)} </li>
+                        {selectObjet === objet.id && (` --- Poids : ${selectObjetContent.poids_kg} kg --- Etat : ${selectObjetContent.etat_arrivee} --- Date de mise en rayon : ${selectObjetContent.date_mise_rayon ? new Date(selectObjetContent.date_mise_rayon).toLocaleDateString('fr-FR') : "Aucune date renseignée"}`)} </li>
                     
                     
                 ))}

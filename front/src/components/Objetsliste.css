@@ -10,3 +10,18 @@ li.objetsliste-objet {
     margin: 1rem;
     list-style-type: none;
 }
+
+.objetsListeOnboarding {
+    background-color: blanchedalmond;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 1rem;
+    list-style-type: none;
+}
+
+.objetsListeTitre {
+    color: #F57B33;
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
