@@ -1,0 +1,45 @@
+.creationDepot-titre {
+    color: #F57B33;
+    margin-left: 2rem;
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+}
+
+.creationDepot-donneesFormulaire {
+    background-color: blanchedalmond;
+    padding: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border-radius: 1rem;
+}
+
+.creationDepot-selectPersonne {
+    color: black;
+    background-color: white;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    margin: 0.5rem;
+}
+
+.creationDepot-inputDate {
+    color: black;
+    background-color: white;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    margin: 0.5rem;
+}
+
+.creationDepot-selectType {
+    color: black;
+    background-color: white;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    margin: 0.5rem;
+}
+
+.creationDepot-boutonValider {
+    background-color: #F57B33;
+    padding: 0.5rem;
+    margin: 1rem;
+    border-radius: 1rem;
+}
