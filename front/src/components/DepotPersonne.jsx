@@ -98,19 +98,19 @@ const DepotPersonne = () => {
 
 	return (
 		<>
-			<h3>Dépot N°{depot.id} - {personne.nom} {personne.prenom} </h3>	
+			<h3 className="depotPersonne-titreDepot">Dépot N°{depot.id} - {personne.nom} {personne.prenom} </h3>	
 
 			<section className="depotPersonne-dataDepotCree">
-				<select disabled value={personne.id}>
+				<select disabled value={personne.id} className="depotPersonne-selectPersonne">
 					<option value={personne.id}>{personne.nom} {personne.prenom}</option>
 				</select>
-				<input disabled type="date" value={depot.date_depot.slice(0, 10)} />
-				<select disabled value={depot.type}>
+				<input disabled type="date" value={depot.date_depot.slice(0, 10)} className="depotPersonne-selectDate"/>
+				<select disabled value={depot.type} className="depotPersonne-selectDepotType">
 					<option value={depot.type}>{depot.type}</option>
 				</select>
 			</section>
 
-			<h2>Ajout d'un objet :</h2>
+			<h2 className="depotPersonne-titreObjet">Ajout d'un objet :</h2>
 
 			<form onSubmit={handleSubmit}>
 

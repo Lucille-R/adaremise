@@ -1,0 +1,97 @@
+/* PARTIE DEPOT */
+/* ----------------------------------------------------------------------- */
+.depotPersonne-titreDepot {
+    color: #2f5e6b;
+    margin-left: 2rem;
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+}
+
+.depotPersonne-dataDepotCree {
+    background-color: blanchedalmond;
+    padding: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border-radius: 1rem;
+}
+
+.depotPersonne-selectPersonne {
+    background-color: blanchedalmond;
+    color: black;
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+    border-radius: 1rem; 
+}
+
+.depotPersonne-selectDate {
+    background-color: blanchedalmond;
+    color: black;
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+    border-radius: 1rem; 
+}
+
+.depotPersonne-selectDepotType {
+    background-color: blanchedalmond;
+    color: black;
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+    border-radius: 1rem;
+}
+
+/* PARTIE OBJET */
+/* ----------------------------------------------------------------------- */
+
+.depotPersonne-titreObjet {
+    color: #F57B33;
+    margin-left: 2rem;
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+}
+
+.depotPersonne-donneesFormulaires {
+    background-color: #F57B33;
+    padding: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border-radius: 1rem;
+}
+
+.depotPersonne-inputLibelle {
+    background-color: white;
+    color: black;
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+    border-radius: 1rem; 
+}
+
+.depotPersonne-inputPoids {
+    background-color: white;
+    color: black;
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+    border-radius: 1rem; 
+}
+
+.depotPersonne-selectEtatArrivee {
+    background-color: white;
+    color: black;
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+    border-radius: 1rem; 
+}
+
+.depotPersonne-selectCategorie {
+    background-color: white;
+    color: black;
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+    border-radius: 1rem; 
+}
+
+.depotPersonne-boutonValider {
+    background-color: #F57B33;
+    padding: 0.5rem;
+    margin: 1rem;
+    border-radius: 1rem;
+}
