@@ -92,9 +92,17 @@ function Objetsliste () {
     }, [selectObjet])
     return (
         <>
+
+        <div className="objetliste_globalbox">
+
         <div className="filtre_objets_box">
         
             <Filtres statut={statutFiltre} onStatutChange={handleStatutChange} categories={categories} categorieFiltre={categorieFiltre} onCategorieChange={handleCategorieChange}/>
+                
+        </div>  
+
+        <div className="objets_box">
+            
                 <h2 className="objetsListeTitre">Stock de La Remise</h2>
 
                 <section className="objetsListeOnboarding">
@@ -103,44 +111,49 @@ function Objetsliste () {
                         </p>
                 </section>
                 
-        <div className="objetliste-bandeau">
+            <div className="objetliste-bandeau">
 
-            <ul>
-                {objets.map((objet) =>(
-                    <li 
-                    key={objet.id} 
-                    className="objetsliste-objet" 
-                    onClick={() => handleObjetChange(objet.id)}>
-                        {objet.libelle} --- Catégorie : {objet.categorie} --- Prix : {objet.prix} € --- Statut de l'objet : {objet.statut} 
-                        {selectObjet === objet.id && (
-                            <div onClick={(e) => e.stopPropagation()}>
-                                <p>
+                <ul>
+                    {objets.map((objet) =>(
+                        <li 
+                        key={objet.id} 
+                        className="objetsliste-objet" 
+                        onClick={() => handleObjetChange(objet.id)}>
+                            {objet.libelle} --- Catégorie : {objet.categorie} --- Prix : {objet.prix} € --- Statut de l'objet : {objet.statut} 
+                            {selectObjet === objet.id && (
+                                <div onClick={(e) => e.stopPropagation()}>
+                                    <p>
 
-                                {` --- Poids : ${selectObjetContent.poids_kg} kg --- Etat : ${selectObjetContent.etat_arrivee} --- Date de mise en rayon : ${selectObjetContent.date_mise_rayon ? new Date(selectObjetContent.date_mise_rayon).toLocaleDateString('fr-FR') : "Aucune date renseignée"}`}
+                                    {` --- Poids : ${selectObjetContent.poids_kg} kg --- Etat : ${selectObjetContent.etat_arrivee} --- Date de mise en rayon : ${selectObjetContent.date_mise_rayon ? new Date(selectObjetContent.date_mise_rayon).toLocaleDateString('fr-FR') : "Aucune date renseignée"}`}
 
-                                </p>
+                                    </p>
 
-                                <select value={curentSelectStatut} onChange={(e) => setCurentSelectStatut(e.target.value)}className="objetliste-selectstatut">
-                                    <option value="arrive">Arrivé</option>
-                                    <option value="en_reparation">En reparation</option>
-                                    <option value="en_rayon">En rayon</option>
-                                    <option value="vendu">Vendu</option>
-                                    <option value="recycle">Recycle</option>
-                                </select>
-                
-                                <button className="objetlist-valid" onClick={() => handleValidStatut(objet.id)}>Modifier</button>
-                                
-                            </div>
-                        )}
-                    </li>
-    
-                ))}
-                
-            </ul>
+                                    <select value={curentSelectStatut} onChange={(e) => setCurentSelectStatut(e.target.value)}className="objetliste_selectstatut">
+                                        <option value="arrive">Arrivé</option>
+                                        <option value="en_reparation">En reparation</option>
+                                        <option value="en_rayon">En rayon</option>
+                                        <option value="vendu">Vendu</option>
+                                        <option value="recycle">Recycle</option>
+                                    </select>
+                    
+                                    <button className="objetlist_valid" onClick={() => handleValidStatut(objet.id)}>Modifier</button>
+                                    
+                                </div>
+                            )}
+                        </li>
         
+                    ))}
+                    
+                </ul>
+        
+            </div>
+        
+        </div>      
+        
+        
+            
         </div>
-        
-        </div> 
+
         </>
     )
 };
