@@ -2,10 +2,11 @@ import './App.css';
 /* import Objetsliste from './components/Objetsliste' */
 import { useState } from 'react';
 import { Routes, Route, Navigate } from "react-router";
-import Benevoles from './components/Benevoles.jsx'
-import Objetsliste from './components/Objetsliste.jsx'
-import CreationDepot from './components/CreationDepot.jsx'
-import Stats from './components/Stats.jsx'
+import Benevoles from './components/Benevoles.jsx';
+import Objetsliste from './components/Objetsliste.jsx';
+import CreationDepot from './components/CreationDepot.jsx';
+import DepotPersonne from './components/DepotPersonne.jsx';
+import Stats from './components/Stats.jsx';
 import Navbar from './components/Navbar.jsx';
 import Entete from './components/Entete.jsx';
 
@@ -42,6 +43,7 @@ const handleDeconnection = (reset) => {
            <Route path="/" element={<Navigate to="/objets" replace />} />
            <Route path="/objets" element={<Objetsliste />} />
            <Route path="/depots" element={<CreationDepot />} />
+           <Route path="/depots/:id/objets" element={<DepotPersonne />} />
            <Route path="/stats" element={<Stats />} />
            <Route path="*" element={<p>Page introuvable</p>} /> {/* path="*" attrape tout ce qu'aucune autre route n'a reconnu. Elle se place toujours en dernier. */}
          </Routes>

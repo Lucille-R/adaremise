@@ -100,7 +100,7 @@ const CreationDepot = () => {
 
 	return (
 		<>
-			<h2>Nouveau dépôt</h2>
+			<h2>Nouveau dépôt :</h2>
 
 			<form onSubmit={handleSubmit}>
 				

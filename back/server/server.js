@@ -36,8 +36,8 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.use("/api", routerCategories);
 app.use("/api", routerObjets);
-// app.use("/api", routerDepots);
-// app.use("/api", routerPersonnes);
+app.use("/api", routerDepots);
+app.use("/api", routerPersonnes);
 app.use("/api", routerStats);
 app.use("/api", routerBenevoles);
 
