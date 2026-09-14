@@ -36,6 +36,7 @@ L'application couvre aujourd'hui le parcours minimal de gestion du stock d'objet
 | Domaine | Choix |
 |---|---|
 | Frontend | React 19 + Vite, React Router pour la navigation |
+| Polices | Google Fonts (Barlow, Roboto), chargées via `front/index.html` |
 | Backend | Express 5, SQL brut via `pg` (pas d'ORM) |
 | Base de données | PostgreSQL 16, exécutée dans Docker |
 | Documentation API | `swagger-jsdoc` + `swagger-ui-express` |
