@@ -58,7 +58,13 @@ const Stats = () => {
         // --- Active la legende, le titre general et l'effet tooltip lors de hover ---
         plugins: {
             legend: { display: true},
-            title : { display: true, text: "Classification par statut :" },
+            title : { 
+                display: true, 
+                text: "Classification par statut ",
+                font: {
+                    size: 30,
+                    weight: "bold"
+                } },
             tooltip: {
                 enabled: true,
                 displayColors: false,
@@ -82,7 +88,7 @@ const Stats = () => {
                 beginAtZero: true,
                 title: { display: false },
                 ticks: { stepSize: 1,
-                         font: { size: 14, weight: "bold" }
+                         font: { size: 18, weight: "bold" }
                  },
                 grid: { display: false }
             },
@@ -90,7 +96,7 @@ const Stats = () => {
             x: {
                 title: { display: false },
                 grid: { display: false },
-                ticks: { font: { size: 14, weight: "bold" }}
+                ticks: { font: { size: 18, weight: "bold" }}
             }
         },
         // --- Parametre pour le visuel des barres ---
@@ -116,14 +122,14 @@ const Stats = () => {
     return (
         <section className="stats-stats">
             {/* Affichage données générales */}
-            <div className="stats-generalData">
+            <div className="stats-generalData stats-blocBg">
                 <article className="stats-generalDatablocks">
-                    <h4 className="stats-titleGenData">Objets en rayon </h4>
                     <p className="stats-detailGenData ">{nbObjetRayon}</p>
+                    <h4 className="stats-titleGenData">Objets en rayon </h4>
                 </article>
                 <article className="stats-generalDatablocks">
-                    <h4 className="stats-titleGenData">Poids Total </h4>
                     <p className="stats-detailGenData ">{poidsTotal} kg</p>
+                    <h4 className="stats-titleGenData">Poids Total Reçus </h4>
                 </article>
             </div>
             {/* Affichage Graph */}
