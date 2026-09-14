@@ -9,7 +9,7 @@
 :root {
     --color-bgLight :grey;
     --color-bgDark : rgb(60, 60, 60);
-    --color-textData : rgb(51, 241, 178);
+    --color-textData : #F57B33;
 }
 
 .stats-stats {
@@ -33,10 +33,10 @@
         }
 
         .stats-detailGenData {
-            color: var(--color-textData);
+            color: wheat;
             font-weight: bold;
             font-size: xx-large;
-            text-shadow: 1px 1px 1px  rgba(51, 241, 178, 0.416);
+            text-shadow: 1px 1px 1px  rgb(143, 129, 104);
         }
 }
 

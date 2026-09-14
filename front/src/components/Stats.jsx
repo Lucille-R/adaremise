@@ -118,11 +118,11 @@ const Stats = () => {
             {/* Affichage données générales */}
             <div className="stats-generalData">
                 <article className="stats-generalDatablocks">
-                    <h4 className="stats-titleGenData">Objets en rayon :</h4>
+                    <h4 className="stats-titleGenData">Objets en rayon </h4>
                     <p className="stats-detailGenData ">{nbObjetRayon}</p>
                 </article>
                 <article className="stats-generalDatablocks">
-                    <h4 className="stats-titleGenData">Poids Total :</h4>
+                    <h4 className="stats-titleGenData">Poids Total </h4>
                     <p className="stats-detailGenData ">{poidsTotal} kg</p>
                 </article>
             </div>
