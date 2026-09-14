@@ -42,7 +42,7 @@ routerDepots.post("/depots", async (req, res) => {
 	const { personne_id, date_depot, type } = req.body;
 
 	// Gestion des champs obligatoires :
-	if (personne_id === undefined || date_depot === undefined || type === undefined) {
+	if (!personne_id || !date_depot || !type) {
 		return res.status(400).json({erreur: 'Champ obligatoire manquant'});
 	}
 
@@ -121,7 +121,7 @@ routerDepots.post("/depots/:id/objets", async (req, res) => {
 	const { libelle, poids_kg, etat_arrivee, categorie_id } = req.body;
 
 	// Gestion des champs obligatoires :
-	if (libelle === undefined || poids_kg === undefined || etat_arrivee === undefined || categorie_id === undefined) {
+	if (!libelle || !poids_kg || !etat_arrivee || !categorie_id) {
 		return res.status(400).json({erreur: 'Champ obligatoire manquant'});
 	}
 
