@@ -1,4 +1,4 @@
-.filtre_objets_box {
+.objetliste_globalbox {
     display: flex;
 }
 
@@ -24,4 +24,19 @@ li.objetsliste-objet {
     margin-left: 2rem;
     margin-bottom: 1rem;
     margin-top: 1rem;
+}
+
+.objetlist_valid {
+    background-color: #F57B33;
+    padding: 0.5rem;
+    margin: 1rem;
+    border-radius: 1rem;
+}
+
+.objetliste_selectstatut {
+   background-color: blanchedalmond;
+   color: black;
+    padding: 0.5rem;
+    margin: 1rem;
+    border-radius: 1rem; 
 }
