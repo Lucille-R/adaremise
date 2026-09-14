@@ -33,7 +33,7 @@ const handleDeconnexion = (reset) => {
 
   return (
     <>
-      <Entete benevole={benevole} deconnection={handleDeconnexion} />
+      <Entete benevole={benevole} deconnexion={handleDeconnexion} />
       <Navbar />
 
 
