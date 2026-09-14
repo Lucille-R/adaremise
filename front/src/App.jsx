@@ -21,7 +21,7 @@ const handleSelection = (nom, prenom) => {
   setBenevole({nom, prenom});
 }
 
-const handleDeconnection = (reset) => {
+const handleDeconnexion = (reset) => {
   setBenevole(reset)
 }
 
@@ -33,7 +33,7 @@ const handleDeconnection = (reset) => {
 
   return (
     <>
-      <Entete benevole={benevole} deconnection={handleDeconnection} />
+      <Entete benevole={benevole} deconnection={handleDeconnexion} />
       <Navbar />
 
 

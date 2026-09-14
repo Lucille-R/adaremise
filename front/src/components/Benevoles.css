@@ -18,7 +18,8 @@
 .benevoles-title {
     justify-self: center;
     margin: 50px;
-    font-size: xx-large;
+    font-size: 3rem;
+    color: var(--color-active);
 }
 
 .benevoles-boutonDisplay {
@@ -40,7 +41,7 @@
     width: 225px;
     height: 150px;
     padding: 20px;
-    font-size: larger;
+    font-size: xx-large;
     border: 1px;
     border-radius: 6px;
 }
