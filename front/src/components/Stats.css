@@ -1,0 +1,121 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+    --color-bgLight :blanchedalmond;
+    --color-bgDark : #56ADC4;
+    --color-textData : #F57B33;
+    --color-textLegend : rgb(78, 78, 78);
+}
+
+.stats-stats {
+    display: flex;
+    flex-direction: column;
+}
+
+.stats-generalData {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 0px 0px;
+    padding-bottom: 4%;
+
+        .stats-titleGenData {
+            font-size: larger;
+            font-weight: bold;
+            color: var(--color-textLegend);
+        }
+
+        .stats-detailGenData {
+            color: blanchedalmond;
+            font-weight: bold;
+            font-size: xx-large;
+            text-shadow: 1px 1px 1px  rgb(143, 129, 104);
+        }
+}
+
+
+.stats-generalDatablocks {
+    background-color: var(--color-bgLight);
+    border-radius: 6px  ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 100px;
+    /* padding: 10px; */
+    gap: 15px;
+}
+
+.stats-chartStatus {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+        .stats-chartWrapper {
+            position: relative;
+            width: 700px;
+            height: 400px;
+            border-radius: 6px;
+        }
+}
+
+.stats-blocBg {
+    display: flex;
+    flex-direction: row;
+    justify-self: center;
+    align-self: center;
+    justify-content: space-around;
+    align-items: center;
+    background-color: blanchedalmond;
+    border-radius: 0.8rem;
+    margin-top: 10px;
+    padding: 20px;
+    width: 70%;
+}
+
+.stats-donneeTableau {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.stats-cardData {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: blanchedalmond;
+    width: 150px;
+    padding: 10px ;
+    margin: 20px 0px;
+    border-radius: 6px;
+    box-shadow: 5px 5px 5px black;
+    
+        .stats-donneeTitle {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .stats-donneeTitle::first-letter {
+            font-size: large;
+            text-transform: capitalize;
+        }
+}
+
+.stats-erreur {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+

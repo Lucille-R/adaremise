@@ -1,0 +1,49 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+    --color-bgLight :#56ADC4;
+    --color-bgLightDesature :#7DB5C7;
+    /* --color-bgDark : rgb(60, 60, 60); */
+    --color-text : rgb(51, 241, 178);
+    --color-active : #F57B33;
+    --color-activeDesature : #FA8B48;
+}
+
+.navbar-navigation {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--color-bgLight);
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+}
+
+.navbar-boutonNavigation {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-bgLightDesature);
+    padding: 10px;
+    border-radius: 6px;
+    color: blanchedalmond;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.497);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.navbar-boutonNavigation:active {
+    box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 0.497);
+    background-color: var(--color-active);
+    font-weight: bold;
+}
+
+.navbar-boutonActive {
+    background-color: var(--color-active);
+    font-weight: bold;
+}

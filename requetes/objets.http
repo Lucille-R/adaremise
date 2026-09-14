@@ -1,0 +1,61 @@
+### Liste tous les objets
+
+GET http://localhost:3000/api/objets 
+
+### Filtre par statut
+
+GET http://localhost:3000/api/objets?statut=en_rayon
+
+### Filtre par catégories
+
+GET http://localhost:3000/api/objets?categorie_id=7
+
+### Filtre cumulé (statut + catégorie)
+
+GET http://localhost:3000/api/objets?statut=en_rayon&categorie_id=7
+
+### Objet existant 
+
+GET http://localhost:3000/api/objets/1
+
+### Objet non existant (erreur 404)
+
+GET http://localhost:3000/api/objets/9999
+
+
+### Changer le statut d'un objet (200)
+
+PATCH http://localhost:3000/api/objets/1/statut
+Content-Type: application/json
+
+{
+    "statut" : "en_rayon"
+}
+
+### Cas erreur objet inexistant (404)
+
+PATCH http://localhost:3000/api/objets/9999/statut
+Content-Type: application/json
+
+{
+    "statut" : "recycle"
+}
+
+### Cas erreur statut manquant (400)
+
+PATCH http://localhost:3000/api/objets/1/statut
+Content-Type: application/json
+
+{
+
+}
+
+### Cas erreur statut invalide (400)
+
+PATCH http://localhost:3000/api/objets/1/statut
+Content-Type: application/json
+
+{
+    "statut" : "poubelle"
+}
+
