@@ -1,0 +1,86 @@
+.depotPersonne-titreDepotPersonne {
+	color: #F57B33;
+	text-align: center;
+	font-size: 1.5rem;
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.depotPersonne-dataDepotCree {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	height: 50px;
+}
+
+.depotPersonne-dataDepotPersonne,
+.depotPersonne-dataDepotDate,
+.depotPersonne-dataDepotType {
+	background-color: #F57B33;
+	color: black;
+	padding: 8px;
+	margin: 8px;
+	border-radius: 6px;
+}
+
+.depotPersonne-titreAjoutObjet {
+	color: #F57B33;
+	text-align: center;
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.depotPersonne-formulaire {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	height: 50px;
+}
+
+.depotPersonne-donneesFormulaires {
+    background-color: #56ADC4;
+    border-radius: 6px;
+    padding: 0px;
+    margin: 0.5rem;
+}
+
+.depotPersonne-inputLibelle,
+.depotPersonne-inputPoids,
+.depotPersonne-selectEtatArrivee,
+.depotPersonne-selectCategorie {
+	background-color: blanchedalmond;
+	color: black;
+    padding: 8px;
+    margin: 8px;
+    border-radius: 6px; 
+}
+
+.depotPersonne-boutonValider {
+	background-color: #F57B33;
+	padding: 8px;
+    margin: 8px;
+    border-radius: 6px;
+	border: none;
+	height: 50px;
+	box-shadow: 0px 3px 0px #d66b2c; /* pour permettre la réduction ensuite sur le :active (et effet d'enfoncement) */
+	transition: all 0.1s ease; /* propriété (all) durée (0.1s) fonction-de-timing (ease) délai (néant) */
+}
+.depotPersonne-boutonValider:active {
+	transform: translateY(5px); /* déplace le bouton vers la droite */
+	box-shadow: 0 0 0 #F57B33;/* réduction du box-shadow initial pour l'effet d'enfoncement*/
+}
+
+.depotPersonne-erreurEnvoi {
+	width: 100%;
+	color: #F57B33;
+	text-align: center;
+	font-weight: bold;
+	font-style: italic;
+	font-size: 1,5rem;
+}
