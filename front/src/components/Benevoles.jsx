@@ -41,7 +41,7 @@ const Benevoles = ({onSelect}) => {
 
     return (
         <>
-        <h2 className="benevoles-title">Identifiez-vous :</h2>
+        <h2 className="benevoles-title">Identifiez-vous</h2>
         <section className="benevoles-boutonDisplay">
             {/* on creer les boutons benevoles qui retourne le nom et prenom apres le click */}
             {listeBenevoles.map((element) => 
