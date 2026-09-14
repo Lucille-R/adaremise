@@ -118,7 +118,7 @@ const DepotPersonne = () => {
 
 					<input type="text" className="depotPersonne-inputLibelle" value={nouvelObjet.libelle} onChange={handleChange} name="libelle" placeholder="Nom de l'objet (30 max)" maxLength="30"/>
 
-					<input type ="number" className="depotPersonne-inputPoids" value={nouvelObjet.poids_kg} onChange={handleChange} name="poids_kg" step="0.01" placeholder="Poids en kg" />
+					<input type ="number" className="depotPersonne-inputPoids" value={nouvelObjet.poids_kg} onChange={handleChange} name="poids_kg" step="0.01" placeholder="Poids (kg)" />
 
 					<select className="depotPersonne-selectEtatArrivee" value={nouvelObjet.etat_arrivee} onChange={handleChange} name="etat_arrivee" >
 						<option value="">Etat d'arrivée</option>
