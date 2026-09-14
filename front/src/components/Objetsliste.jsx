@@ -106,9 +106,9 @@ function Objetsliste () {
                 <h2 className="objetsliste-titre">Stock de La Remise</h2>
 
                 <section className="objetsliste-onboarding">
-                        <p className="objetsListeOnboardingText">Veuillez trouver ci dessous la liste complète des objets présent dans notre stock. <br /><br />
-                            Vous pouvez filtrer chaque resultat grâce à la barre située à votre gauche, ainsi qu'obtenir plus d'informations sur un objets particulier en cliquant sur son bandeau. <br /><br />
-                            Après avoir préalablement modifier le statut de l'objet selctionné, vous pouver en confirmer sa selction avec le bouton modifier.
+                        <p className="objetsListeOnboardingText">Veuillez trouver ci dessous la liste complète des objets présents dans notre stock. <br /><br />
+                            Vous pouvez filtrer chaque résultat grâce à la barre située à votre gauche, ainsi qu'obtenir plus d'informations sur un objet particulier en cliquant sur son bandeau. <br /><br />
+                            Après avoir préalablement modifier le statut de l'objet selctionné, vous pouvez en confirmer sa sélection avec le bouton "modifier".
                         </p>
                 </section>
                 
