@@ -120,12 +120,12 @@ function Objetsliste () {
                         key={objet.id} 
                         className="objetsliste-objet" 
                         onClick={() => handleObjetChange(objet.id)}>
-                            {objet.libelle} --- Catégorie : {objet.categorie} --- Prix : {objet.prix} € --- Statut de l'objet : {objet.statut} 
+                            {objet.libelle}   |   {objet.categorie}   |   Statut de l'objet : {objet.statut} 
                             {selectObjet === objet.id && (
                                 <div onClick={(e) => e.stopPropagation()}>
                                     <p>
 
-                                    {` --- Poids : ${selectObjetContent.poids_kg} kg --- Etat : ${selectObjetContent.etat_arrivee} --- Date de mise en rayon : ${selectObjetContent.date_mise_rayon ? new Date(selectObjetContent.date_mise_rayon).toLocaleDateString('fr-FR') : "Aucune date renseignée"}`}
+                                    {`Prix : ${objet.prix} €  |  Poids : ${selectObjetContent.poids_kg} kg | ${selectObjetContent.etat_arrivee} | Date de mise en rayon : ${selectObjetContent.date_mise_rayon ? new Date(selectObjetContent.date_mise_rayon).toLocaleDateString('fr-FR') : "Aucune date renseignée"}`}
 
                                     </p>
 
