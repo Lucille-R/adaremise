@@ -98,27 +98,27 @@ const DepotPersonne = () => {
 
 	return (
 		<>
-			<h3>Dépot N°{depot.id} - {personne.nom} {personne.prenom} </h3>	
+			<h3 className="depotPersonne-titreDepotPersonne">Dépot N°{depot.id} - {personne.nom} {personne.prenom} </h3>	
 
 			<section className="depotPersonne-dataDepotCree">
-				<select disabled value={personne.id}>
+				<select disabled className="depotPersonne-dataDepotPersonne" value={personne.id}>
 					<option value={personne.id}>{personne.nom} {personne.prenom}</option>
 				</select>
-				<input disabled type="date" value={depot.date_depot.slice(0, 10)} />
-				<select disabled value={depot.type}>
+				<input disabled type="date" className="depotPersonne-dataDepotDate" value={depot.date_depot.slice(0, 10)} />
+				<select disabled className="depotPersonne-dataDepotType" value={depot.type}>
 					<option value={depot.type}>{depot.type}</option>
 				</select>
 			</section>
 
-			<h2>Ajout d'un objet :</h2>
+			<h2 className="depotPersonne-titreAjoutObjet">Ajout d'un objet</h2>
 
-			<form onSubmit={handleSubmit}>
+			<form className="depotPersonne-formulaire" onSubmit={handleSubmit}>
 
 				<section className="depotPersonne-donneesFormulaires">
 
 					<input type="text" className="depotPersonne-inputLibelle" value={nouvelObjet.libelle} onChange={handleChange} name="libelle" placeholder="Nom de l'objet (30 car. max)" maxLength="30"/>
 
-					<input type ="number" className="depotPersonne-inputPoids" value={nouvelObjet.poids_kg} onChange={handleChange} name="poids_kg" step="0.01" />
+					<input type ="number" className="depotPersonne-inputPoids" value={nouvelObjet.poids_kg} onChange={handleChange} name="poids_kg" step="0.01" placeholder="Poids en kg" />
 
 					<select className="depotPersonne-selectEtatArrivee" value={nouvelObjet.etat_arrivee} onChange={handleChange} name="etat_arrivee" >
 						<option value="">Etat d'arrivée</option>
@@ -137,7 +137,7 @@ const DepotPersonne = () => {
 
 				<button type="submit" className="depotPersonne-boutonValider" >Valider</button>
 
-				{erreurEnvoi && <p className="depotPersonne-erreurEnvoi">{erreurEnvoi}</p> }
+				{erreurEnvoi && <p className="depotPersonne-erreurEnvoi">{erreurEnvoi} !</p> }
 
 			</form>
 		</>
