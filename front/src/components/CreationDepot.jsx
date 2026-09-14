@@ -100,9 +100,9 @@ const CreationDepot = () => {
 
 	return (
 		<>
-			<h2>Nouveau dépôt :</h2>
+			<h2 className="creationDepot-titre">Nouveau dépôt</h2>
 
-			<form onSubmit={handleSubmit}>
+			<form onSubmit={handleSubmit} className="creationDepot-formulaire">
 				
 				<section className="creationDepot-donneesFormulaire">
 					<select className="creationDepot-selectPersonne" value={nouveauDepot.personne_id} onChange={handleChange} name="personne_id" >
@@ -123,7 +123,7 @@ const CreationDepot = () => {
 
 				<button type="submit" className="creationDepot-boutonValider">Valider</button>
 
-				{erreurEnvoi && <p className="creationDepot-erreurEnvoi">{erreurEnvoi}</p>}
+				{erreurEnvoi && <p className="creationDepot-erreurEnvoi">{erreurEnvoi} !</p>}
 
 			</form>
 
