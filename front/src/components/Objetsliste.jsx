@@ -103,11 +103,12 @@ function Objetsliste () {
 
         <div className="objets_box">
             
-                <h2 className="objetsListeTitre">Stock de La Remise</h2>
+                <h2 className="objetsliste-titre">Stock de La Remise</h2>
 
-                <section className="objetsListeOnboarding">
-                        <p className="objetsListeOnboardingText">Veuillez trouver ci dessous la liste complète des objets présent dans notre stock.
-                            Vous pouvez filtrer chaque resultat grâce à la barre située à votre gauche, ainsi qu'obtenir plus d'informations sur un objets particulier en cliquant sur son bandeau.
+                <section className="objetsliste-onboarding">
+                        <p className="objetsListeOnboardingText">Veuillez trouver ci dessous la liste complète des objets présent dans notre stock. <br /><br />
+                            Vous pouvez filtrer chaque resultat grâce à la barre située à votre gauche, ainsi qu'obtenir plus d'informations sur un objets particulier en cliquant sur son bandeau. <br /><br />
+                            Après avoir préalablement modifier le statut de l'objet selctionné, vous pouver en confirmer sa selction avec le bouton modifier.
                         </p>
                 </section>
                 
@@ -128,7 +129,7 @@ function Objetsliste () {
 
                                     </p>
 
-                                    <select value={curentSelectStatut} onChange={(e) => setCurentSelectStatut(e.target.value)}className="objetliste_selectstatut">
+                                    <select value={curentSelectStatut} onChange={(e) => setCurentSelectStatut(e.target.value)}className="objetliste-selectStatut">
                                         <option value="arrive">Arrivé</option>
                                         <option value="en_reparation">En reparation</option>
                                         <option value="en_rayon">En rayon</option>
@@ -136,7 +137,7 @@ function Objetsliste () {
                                         <option value="recycle">Recycle</option>
                                     </select>
                     
-                                    <button className="objetlist_valid" onClick={() => handleValidStatut(objet.id)}>Modifier</button>
+                                    <button className="objetlist-valid" onClick={() => handleValidStatut(objet.id)}>Modifier</button>
                                     
                                 </div>
                             )}

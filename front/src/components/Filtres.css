@@ -1,4 +1,4 @@
-.filtres_box {
+.filtres-box {
     color: blanchedalmond;
     background-color: #F57B33;
     padding: 1rem;
@@ -6,7 +6,7 @@
     box-sizing: border-box;
 }
 
-.filtres_select {
+.filtres-select {
     color: black;
     background-color: blanchedalmond;
     border-radius: 1rem;

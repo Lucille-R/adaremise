@@ -2,6 +2,21 @@
     display: flex;
 }
 
+.objetsliste-titre {
+    color: #F57B33;
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.objetsliste-onboarding {
+    background-color: blanchedalmond;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 1rem;
+    list-style-type: none;
+}
+
 li.objetsliste-objet {
     color: blanchedalmond;
     background-color: #56ADC4;
@@ -11,32 +26,17 @@ li.objetsliste-objet {
     list-style-type: none;
 }
 
-.objetsListeOnboarding {
-    background-color: blanchedalmond;
-    border-radius: 1rem;
-    padding: 1rem;
-    margin: 1rem;
-    list-style-type: none;
-}
-
-.objetsListeTitre {
-    color: #F57B33;
-    margin-left: 2rem;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
-}
-
-.objetlist_valid {
-    background-color: #F57B33;
-    padding: 0.5rem;
-    margin: 1rem;
-    border-radius: 1rem;
-}
-
-.objetliste_selectstatut {
+.objetliste-selectStatut {
    background-color: blanchedalmond;
    color: black;
     padding: 0.5rem;
     margin: 1rem;
     border-radius: 1rem; 
+}
+
+.objetlist-valid {
+    background-color: #F57B33;
+    padding: 0.5rem;
+    margin: 1rem;
+    border-radius: 1rem;
 }
