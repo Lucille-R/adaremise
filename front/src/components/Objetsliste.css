@@ -26,6 +26,57 @@
     list-style-type: none;
 }
 
+.objetsliste-objetNom ,
+.objetliste-bandeauobjetCategorie ,
+.objetliste-bandeauobjetStatut {
+    color: black;
+    background-color: blanchedalmond;
+    padding-left: 1rem;
+    padding: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 1rem;
+    margin-right: 1rem;
+}
+
+.objetlist-objetexpansion ,
+.objetliste-bandeauobjet{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.objetlist-prix ,
+.objetlist-poids,
+.objetlist-etat,
+.objetlist-date {
+    color: black;
+    background-color: white;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border-radius: 1rem;
+    margin-right: 1rem;
+    margin-top: 2rem;
+}
+
+.lucide-piggy-bank ,
+.lucide-weight ,
+.lucide-cog ,
+.lucide-calendar-days {
+    margin-right: 0.5rem;
+}
+
+.objetlist-prix,
+.objetlist-poids,
+.objetlist-etat,
+.objetlist-date,
+.objetliste-bandeauobjetCategorie {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+}
+
 .objetslite-bandeauDeplie {
     color: black;
     background-color: blanchedalmond;
@@ -34,17 +85,26 @@
     border-radius: 0.5rem;
 }
 
+.objetlist-objetModif {
+    display: flex;
+    justify-content: flex-end;
+}
+
 .objetliste-selectStatut {
-   background-color: blanchedalmond;
+   background-color: white;
    color: black;
     padding: 0.5rem;
-    margin: 1rem;
-    border-radius: 0.5rem; 
+    margin-top: 2rem;
+    margin-right: 1rem;
+    border-radius: 1rem;
+    font-size: large;
 }
+
 
 .objetlist-valid {
     background-color: #F57B33;
     padding: 0.5rem;
-    margin: 1rem;
-    border-radius: 0.5rem;
+    border-radius: 1rem;
+    margin-top: 2rem;
+    font-size: large;
 }
