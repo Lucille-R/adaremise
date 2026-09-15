@@ -9,4 +9,5 @@ GET {{baseUrl}}/stats
 ### Apport les temps d'activite
 GET {{baseUrl}}/stats/activite
 
-
+### Apport les nombre de reparation echoue et reussi par categorie
+GET {{baseUrl}}/stats/reparation

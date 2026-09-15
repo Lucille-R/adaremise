@@ -49,8 +49,6 @@ routerStats.get('/stats', async (req,res) => {
             GROUP BY statut
         `);
 
-        console.log(typeof statut.rows[0].nombre);
-
         const poidsTotal = await pool.query(`
             SELECT SUM(poids_kg) AS poids_total_kg
             FROM objet
@@ -93,4 +91,19 @@ routerStats.get('/stats/activite', async (req,res) => {
     res.status(200).json({
         "atelier": atelierActivite.rows[0].activite_atelier, 
         "reparation": reparationActivite.rows[0].activite_reparation})
+});
+
+routerStats.get('/stats/reparation', async (req,res) => {
+
+    const reparationCount = await pool.query(`
+        SELECT categorie.libelle, 
+        COUNT(*) FILTER (WHERE resultat = 'reussie') AS reussie,
+        COUNT(*) FILTER (WHERE resultat = 'echouee') AS echouee
+        FROM categorie
+        JOIN objet ON categorie.id = objet.categorie_id
+        JOIN reparation ON objet.id = reparation.objet_id
+        GROUP BY categorie.libelle
+        `);
+
+    res.status(200).json(reparationCount.rows)
 })
