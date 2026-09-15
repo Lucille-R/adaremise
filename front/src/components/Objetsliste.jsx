@@ -123,7 +123,7 @@ function Objetsliste () {
                             {objet.libelle}   |   {objet.categorie}   |   Statut de l'objet : {objet.statut} 
                             {selectObjet === objet.id && (
                                 <div onClick={(e) => e.stopPropagation()}>
-                                    <p>
+                                    <p className="objetslite-bandeauDeplie">
 
                                     {`Prix : ${objet.prix} €  |  Poids : ${selectObjetContent.poids_kg} kg | ${selectObjetContent.etat_arrivee} | Date de mise en rayon : ${selectObjetContent.date_mise_rayon ? new Date(selectObjetContent.date_mise_rayon).toLocaleDateString('fr-FR') : "Aucune date renseignée"}`}
 
