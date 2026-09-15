@@ -74,8 +74,11 @@ const Stats = () => {
                 padding: 10,
                 callbacks: {
                     label: function(context) {
-                        return `${context.raw} objet(s)`;
-                    }
+                                            let text = "objet"
+                                            if(context.raw > 1)
+                                                text = "objets";
+                                            return `${context.raw} ${text}`;
+                                        }
                 },
                 // --- Parametre liée aux fonts ---
                 titleFont: { size: 16 },
