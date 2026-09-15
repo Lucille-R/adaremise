@@ -66,7 +66,7 @@ const StatsReparation = () => {
             legend: { display: true},
             title : { 
                 display: true, 
-                text: "Réparations réussites et échouées par catégorie",
+                text: "Réparations réussies et échouées par catégorie",
                 font: {
                     size: 20,
                     weight: "bold"
