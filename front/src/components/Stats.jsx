@@ -4,7 +4,8 @@ import { useState, useEffect } from "react";
 // import { Bar } from "react-chartjs-2";
 import "./Stats.css";
 import StatsObjets from "./StatsObjets.jsx";
-import StatsActivite from "./StatsActivite.jsx"
+import StatsActivite from "./StatsActivite.jsx";
+import StatsReparation from "./StatsReparation.jsx";
 import NavStats from "./NavStats.jsx"
 
 
@@ -79,7 +80,7 @@ const Stats = () => {
                 <div className="stats-statsObjetsWrapper">
                     {dataDisplay === "objets" && <StatsObjets />}
                     {dataDisplay === "ca" && <ChiffreAffaire />}
-                    {dataDisplay === "reparation" && <ReparationStats />}
+                    {dataDisplay === "reparation" && <StatsReparation />}
                     {dataDisplay === "activite" && <StatsActivite />}
                 </div>
                 <div>
