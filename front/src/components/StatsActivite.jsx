@@ -40,9 +40,10 @@ const StatsActivite = () => {
                         datasets: [{ 
                             label: "heures", 
                             data: activite ? [activite.atelier, activite.reparation] : [0,0], 
-                            backgroundColor: ["#58d97d", "#bc49ed"],
+                            backgroundColor: ["#F57B33", "#396184"],
                             // --- Effect de changement de couleur lors du passage de la souris ---
-                            hoverBackgroundColor: ["#F57B33","#F57B33"] 
+                            hoverBorderColor: '#020803',
+                            hoverOffset: 25
                         }] 
     }
 
@@ -64,7 +65,7 @@ const StatsActivite = () => {
                 displayColors: false,
                 backgroundColor: "transparent",
                 titleColor: "transparent",
-                bodyColor: "#7b501b",
+                bodyColor: "#060401",
                 padding: 10,
                 callbacks: {
                     label: function(context) {
