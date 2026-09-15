@@ -74,9 +74,7 @@ const Stats = () => {
                 padding: 10,
                 callbacks: {
                     label: function(context) {
-                                            let text = "objet"
-                                            if(context.raw > 1)
-                                                text = "objets";
+                                            let text = context.raw > 1 ? "objets" : "objet";
                                             return `${context.raw} ${text}`;
                                         }
                 },
