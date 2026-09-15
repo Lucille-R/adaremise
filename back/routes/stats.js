@@ -77,3 +77,20 @@ routerStats.get('/stats', async (req,res) => {
 
 });
 
+routerStats.get('/stats/activite', async (req,res) => {
+
+    const atelierActivite = await pool.query(`
+        SELECT SUM(atelier.duree) AS Activite_Atelier
+        FROM atelier
+        `)
+
+    const reparationActivite = await pool.query(`
+        SELECT SUM(reparation.duree_h) AS Activite_Reparation
+        FROM reparation
+        `)
+
+
+    res.status(200).json({
+        "atelier": atelierActivite.rows[0].activite_atelier, 
+        "reparation": reparationActivite.rows[0].activite_reparation})
+})
