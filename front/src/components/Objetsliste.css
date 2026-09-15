@@ -11,19 +11,27 @@
 
 .objetsliste-onboarding {
     background-color: blanchedalmond;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     padding: 1rem;
     margin: 1rem;
     list-style-type: none;
 }
 
-li.objetsliste-objet {
+.objetsliste-objet {
     color: blanchedalmond;
     background-color: #56ADC4;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     padding: 1rem;
     margin: 1rem;
     list-style-type: none;
+}
+
+.objetslite-bandeauDeplie {
+    color: black;
+    background-color: blanchedalmond;
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
 }
 
 .objetliste-selectStatut {
@@ -31,12 +39,12 @@ li.objetsliste-objet {
    color: black;
     padding: 0.5rem;
     margin: 1rem;
-    border-radius: 1rem; 
+    border-radius: 0.5rem; 
 }
 
 .objetlist-valid {
     background-color: #F57B33;
     padding: 0.5rem;
     margin: 1rem;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
 }
