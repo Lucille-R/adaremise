@@ -1,12 +1,14 @@
-
+/*==============================================================*/
+/*===================== TITRE NOUVEAU DEPOT ====================*/
+/*==============================================================*/
 .creationDepot-titre {
 	color: #F57B33;
 	text-align: center;
-    margin-left: 2rem;
     margin-bottom: 1rem;
     margin-top: 1rem;
 }
 
+/*======================== Formulaire ========================*/
 .creationDepot-formulaire {
 	display: flex;
 	flex-direction: row;
@@ -28,13 +30,22 @@
 .creationDepot-selectType {
 	background-color: blanchedalmond;
 	color: black;
+	font-family: "Barlow", sans-serif;
     padding: 8px;
     margin: 8px;
     border-radius: 6px; 
 }
 
+
+/*==================== BOUTON : Valider ====================*/
 .creationDepot-boutonValider {
 	background-color: #F57B33;
+	font-family: "Barlow", sans-serif;
+	color: blanchedalmond;
+	font-style: normal;
+    font-size: 1rem;
+	text-transform: uppercase;
+    font-weight: bold;
 	padding: 8px;
     margin: 8px;
     border-radius: 6px;
@@ -48,6 +59,7 @@
 	box-shadow: 0 0 0 #F57B33;/* réduction du box-shadow initial pour l'effet d'enfoncement*/
 }
 
+/*=================== Message erreur d'envoi ===================*/
 .creationDepot-erreurEnvoi {
 	width: 100%;
 	color: #F57B33;
