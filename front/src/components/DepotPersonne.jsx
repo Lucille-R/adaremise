@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router";
 import "./DepotPersonne.css";
-import { PartyPopper, Trash, CopyPlus } from "lucide-react";
+import { PartyPopper, Trash, SquarePlus } from "lucide-react";
 
 const API = 'http://localhost:3000/api';
 
@@ -167,7 +167,7 @@ const DepotPersonne = () => {
 
 			<form className="depotPersonne-formulaire" onSubmit={handleSubmit}>
 
-				{nouveauxObjets.map((ligne) => (
+				{nouveauxObjets.map((ligne, index) => (
 					<section key={ligne.id} className="depotPersonne-ligneObjet">
 						<div className="depotPersonne-donneesFormulaire">
 							<input type="text" className="depotPersonne-inputLibelle" value={ligne.libelle} onChange={(event) => handleChange(ligne.id, event)} name="libelle" placeholder="Nom de l'objet (30 max)" maxLength="30" disabled={envoiReussi} />
@@ -188,13 +188,14 @@ const DepotPersonne = () => {
 								))}
 							</select>
 						</div>
+						<div className="depotPersonne-btnAjout">
 
-						{!envoiReussi && <button type="button" className="depotPersonne-boutonAjoutObjet" onClick={ajouterLigne}><CopyPlus color="#56ADC4" /></button>}
 
-						{!envoiReussi && nouveauxObjets.length > 1 && (
-							<button type="button" className="depotPersonne-boutonRetirer" onClick={() => retirerLigne(ligne.id)}><Trash className="depotPersonne-iconTrash" color="#ffebcd" /></button>
-						)}
-
+							{!envoiReussi && nouveauxObjets.length > 1 && (
+								<button type="button" className="depotPersonne-boutonRetirer" onClick={() => retirerLigne(ligne.id)}><Trash className="depotPersonne-iconTrash" color="#ffebcd" /></button>
+							)}
+							{index === nouveauxObjets.length - 1 && !envoiReussi && <button type="button" className="depotPersonne-boutonAjoutObjet" onClick={ajouterLigne}><SquarePlus color="#56ADC4" /></button>}
+						</div>
 					</section>
 
 					
