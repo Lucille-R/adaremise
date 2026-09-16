@@ -21,8 +21,7 @@
 .stats-generalData {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    margin: 0px 0px;
+    /* justify-content: space-evenly; */
     padding-bottom: 4%;
 
         .stats-titleGenData {
@@ -72,10 +71,11 @@
     flex-direction: row;
     justify-self: center;
     align-self: center;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     background-color: blanchedalmond;
     border-radius: 0.8rem;
+    gap: 20rem;
     margin-top: 10px;
     padding: 20px;
     width: 100%;
