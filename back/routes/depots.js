@@ -10,6 +10,7 @@ export const routerDepots = express.Router();
  * "/api/depots": {
  *   "post": {
  *     "summary": "Crée un nouveau dépôt",
+ *     "tags" : ["Dépôts"],
  *     "requestBody": {
  *       "required": true,
  *       "content": {
@@ -78,6 +79,7 @@ routerDepots.post("/depots", async (req, res) => {
  * "/api/depots/{id}/objets": {
  *   "post": {
  *     "summary": "Ajoute un objet à un dépôt existant",
+ *     "tags" : ["Dépôts"],
  *     "parameters": [
  *       {
  *         "name": "id",
