@@ -1,3 +1,6 @@
+/*==============================================================*/
+/*================ TITRE DEPOT N°X - NOM PRENOM ================*/
+/*==============================================================*/
 .depotPersonne-titreDepotPersonne {
 	color: #F57B33;
 	text-align: center;
@@ -6,7 +9,7 @@
     margin-bottom: 1rem;
     margin-top: 1rem;
 }
-
+/*===================== Datas du dépôt créé ====================*/
 .depotPersonne-dataDepotCree {
 	display: flex;
 	flex-direction: row;
@@ -24,23 +27,36 @@
 	padding: 8px;
 	margin: 8px;
 	border-radius: 6px;
+	width: 150px;
+	text-align: center;
+	appearance: none;
 }
+
+.depotPersonne-dataDepotDate {
+	background-color: #f8a270;
+}
+
+/*==============================================================*/
+/*===================== TITRE AJOUT D'OBJET ====================*/
+/*==============================================================*/
 
 .depotPersonne-titreAjoutObjet {
 	color: #F57B33;
 	text-align: center;
+	font-size: 2rem;
     margin-left: 2rem;
     margin-bottom: 1rem;
     margin-top: 1rem;
 }
 
+/*================= Formulaire Ajout d'objets =================*/
+
 .depotPersonne-formulaire {
 	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
+	flex-direction: column;
 	align-items: center;
-	justify-content: center;
-	height: 50px;
+	width: 80%;
+	margin: 0 auto;
 }
 
 .depotPersonne-donneesFormulaires {
@@ -49,6 +65,7 @@
 	background-color: #56ADC4;
     border-radius: 6px;
     margin: 0.5rem;
+	width: 80%;
 }
 
 .depotPersonne-inputLibelle,
@@ -59,21 +76,62 @@
 	color: black;
     padding: 8px;
     margin: 8px;
-    border-radius: 6px; 
-}
-
-.depotPersonne-inputLibelle {
-/* 	min-width: 100px; */
-	max-width: 200px;
+    border-radius: 6px;
 	width: 100%;
 }
 
-.depotPersonne-inputPoids {
-/* 	min-width: 100px; */
-	max-width: 100px;
-	width: 100%;
+/*============= Champs du formulaire : bouton Retirer =============*/
+/* .depotPersonne-boutonRetirer {
+	background-color: #56ADC4;
+	border: none;
+	border-radius: 6px;
+	padding: 5px;
+	padding-right: 10px;
+} */
+
+.depotPersonne-boutonRetirer {
+	background-color: #56ADC4;
+	border: none;
+	border-radius: 6px;
+	padding: 5px;
+	padding-right: 10px;
+	transition: transform 0.1s ease;
+}
+.depotPersonne-boutonRetirer:active {
+	transform: scale(0.9);
+}
+/*================ Champs du formulaire : disabled ================*/
+
+.depotPersonne-inputLibelle:disabled,
+.depotPersonne-inputPoids:disabled,
+.depotPersonne-selectEtatArrivee:disabled,
+.depotPersonne-selectCategorie:disabled {
+	opacity: 1;
+	background-color: #ccd8c9;
+	color: black;
+}
+.depotPersonne-selectEtatArrivee:disabled,
+.depotPersonne-selectCategorie:disabled {
+	appearance: none;
 }
 
+/*================= BOUTON : Ajouter un objet =================*/
+.depotPersonne-boutonAjoutObjet {
+	background-color: #56ADC4;
+	padding: 8px;
+	margin: 8px;
+	border-radius: 6px;
+	border: none;
+	height: 50px;
+	box-shadow: 0px 3px 0px #418294;
+	transition: all 0.1s ease;
+}
+.depotPersonne-boutonAjoutObjet:active {
+	transform: translate(5px);
+	box-shadow: 0 0 0 #56ADC4;
+}
+
+/*================= BOUTON : Valider =================*/
 .depotPersonne-boutonValider {
 	background-color: #F57B33;
 	padding: 8px;
@@ -89,6 +147,18 @@
 	box-shadow: 0 0 0 #F57B33;/* réduction du box-shadow initial pour l'effet d'enfoncement*/
 }
 
+
+/*========================== MESSAGES ==========================*/
+/*================ Message Succès ajout d'objets ================*/
+.depotPersonne-msgSucces {
+	width: 100%;
+	color: #56ADC4;
+	text-align: center;
+	font-weight: bold;
+	font-style: italic;
+	font-size: 1.5rem;
+}
+/*=================== Message erreur d'envoi ===================*/
 .depotPersonne-erreurEnvoi {
 	width: 100%;
 	color: #F57B33;
