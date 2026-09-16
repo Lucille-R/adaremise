@@ -51,7 +51,7 @@ const StatsObjets = () => {
         maintainAspectRatio: false, 
         // --- Active la legende, le titre general et l'effet tooltip lors de hover ---
         plugins: {
-            legend: { display: true},
+            legend: { display: false},
             title : { 
                 display: true, 
                 text: "Classification par statut ",

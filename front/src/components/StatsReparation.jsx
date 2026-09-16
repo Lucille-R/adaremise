@@ -19,7 +19,7 @@ const StatsReparation = () => {
             const response = await fetch (`${API}/stats/reparation`);
 
             if(!response.ok){
-                throw new Error (`Erreur ${response.status}: Impossible de charger les statistiques`)
+                throw new Error (`Erreur ${response.status}: Impossible de charger les statistiques`);
             }
 
             const dataJson = await response.json();
