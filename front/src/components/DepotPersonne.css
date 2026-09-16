@@ -24,6 +24,7 @@
 .depotPersonne-dataDepotType {
 	background-color: #F57B33;
 	color: black;
+	font-family: "Barlow", sans-serif;
 	padding: 8px;
 	margin: 8px;
 	border-radius: 6px;
@@ -74,6 +75,7 @@
 .depotPersonne-selectCategorie {
 	background-color: blanchedalmond;
 	color: black;
+	font-family: "Barlow", sans-serif;
     padding: 8px;
     margin: 8px;
     border-radius: 6px;
@@ -81,25 +83,23 @@
 }
 
 /*============= Champs du formulaire : bouton Retirer =============*/
-/* .depotPersonne-boutonRetirer {
-	background-color: #56ADC4;
-	border: none;
-	border-radius: 6px;
-	padding: 5px;
-	padding-right: 10px;
-} */
 
 .depotPersonne-boutonRetirer {
-	background-color: #56ADC4;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #F57B33;
 	border: none;
 	border-radius: 6px;
+	margin: 7px;
 	padding: 5px;
-	padding-right: 10px;
 	transition: transform 0.1s ease;
 }
+
 .depotPersonne-boutonRetirer:active {
 	transform: scale(0.9);
 }
+
 /*================ Champs du formulaire : disabled ================*/
 
 .depotPersonne-inputLibelle:disabled,
@@ -118,11 +118,16 @@
 /*================= BOUTON : Ajouter un objet =================*/
 .depotPersonne-boutonAjoutObjet {
 	background-color: #56ADC4;
+	font-family: "Barlow", sans-serif;
+	color: blanchedalmond;
+	font-style: normal;
+    font-size: 1.2rem;
 	padding: 8px;
 	margin: 8px;
 	border-radius: 6px;
 	border: none;
 	height: 50px;
+	width: 150px;
 	box-shadow: 0px 3px 0px #418294;
 	transition: all 0.1s ease;
 }
@@ -134,11 +139,18 @@
 /*================= BOUTON : Valider =================*/
 .depotPersonne-boutonValider {
 	background-color: #F57B33;
+	font-family: "Barlow", sans-serif;
+	color: blanchedalmond;
+	font-style: normal;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: bold;
 	padding: 8px;
     margin: 8px;
     border-radius: 6px;
 	border: none;
 	height: 50px;
+	width: 150px;
 	box-shadow: 0px 3px 0px #d66b2c; /* pour permettre la réduction ensuite sur le :active (et effet d'enfoncement) */
 	transition: all 0.1s ease; /* propriété (all) durée (0.1s) fonction-de-timing (ease) délai (néant) */
 }
