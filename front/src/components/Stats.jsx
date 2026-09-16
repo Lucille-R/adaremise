@@ -6,6 +6,7 @@ import "./Stats.css";
 import StatsObjets from "./StatsObjets.jsx";
 import StatsActivite from "./StatsActivite.jsx";
 import StatsReparation from "./StatsReparation.jsx";
+import StatsCA from "./StatsCA.jsx";
 import NavStats from "./NavStats.jsx"
 
 
@@ -79,7 +80,7 @@ const Stats = () => {
                 </div>
                 <div className="stats-statsObjetsWrapper">
                     {dataDisplay === "objets" && <StatsObjets />}
-                    {dataDisplay === "ca" && <ChiffreAffaire />}
+                    {dataDisplay === "ca" && <StatsCA />}
                     {dataDisplay === "reparation" && <StatsReparation />}
                     {dataDisplay === "activite" && <StatsActivite />}
                 </div>

@@ -105,5 +105,18 @@ routerStats.get('/stats/reparation', async (req,res) => {
         GROUP BY categorie.libelle
         `);
 
-    res.status(200).json(reparationCount.rows)
+    res.status(200).json(reparationCount.rows);
+});
+
+routerStats.get('/stats/ca', async (req,res) => {
+
+    const {rows} = await pool.query(`
+        SELECT to_char(date_trunc('month', vente.date_vente), 'FMMonth') AS Mois,
+        SUM(objet.prix_paye) FILTER (WHERE prix_paye IS NOT NULL) AS CA
+        FROM vente
+        JOIN objet ON vente.id = objet.vente_id
+        GROUP BY Mois
+        `);
+
+    res.status(200).json(rows);
 })
