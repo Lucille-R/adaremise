@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router";
 import "./DepotPersonne.css";
-import { PartyPopper, Trash } from "lucide-react";
+import { PartyPopper, Trash, CopyPlus } from "lucide-react";
 
 const API = 'http://localhost:3000/api';
 
@@ -168,35 +168,38 @@ const DepotPersonne = () => {
 			<form className="depotPersonne-formulaire" onSubmit={handleSubmit}>
 
 				{nouveauxObjets.map((ligne) => (
-					<section key={ligne.id} className="depotPersonne-donneesFormulaires">
+					<section key={ligne.id} className="depotPersonne-ligneObjet">
+						<div className="depotPersonne-donneesFormulaire">
+							<input type="text" className="depotPersonne-inputLibelle" value={ligne.libelle} onChange={(event) => handleChange(ligne.id, event)} name="libelle" placeholder="Nom de l'objet (30 max)" maxLength="30" disabled={envoiReussi} />
 
-						<input type="text" className="depotPersonne-inputLibelle" value={ligne.libelle} onChange={(event) => handleChange(ligne.id, event)} name="libelle" placeholder="Nom de l'objet (30 max)" maxLength="30" disabled={envoiReussi} />
+							<input type ="number" className="depotPersonne-inputPoids" value={ligne.poids_kg} onChange={(event) => handleChange(ligne.id, event)} name="poids_kg" step="0.01" placeholder="Poids (kg)" disabled={envoiReussi} />
 
-						<input type ="number" className="depotPersonne-inputPoids" value={ligne.poids_kg} onChange={(event) => handleChange(ligne.id, event)} name="poids_kg" step="0.01" placeholder="Poids (kg)" disabled={envoiReussi} />
+							<select className="depotPersonne-selectEtatArrivee" value={ligne.etat_arrivee} onChange={(event) => handleChange(ligne.id, event)} name="etat_arrivee" disabled={envoiReussi} >
+								<option value="">Etat d'arrivée</option>
+								<option value="bon_etat">Bon état</option>
+								<option value="a_reparer">A réparer</option>
+								<option value="hors_service">Hors service</option>
+							</select>
 
-						<select className="depotPersonne-selectEtatArrivee" value={ligne.etat_arrivee} onChange={(event) => handleChange(ligne.id, event)} name="etat_arrivee" disabled={envoiReussi} >
-							<option value="">Etat d'arrivée</option>
-							<option value="bon_etat">Bon état</option>
-							<option value="a_reparer">A réparer</option>
-							<option value="hors_service">Hors service</option>
-						</select>
+							<select className="depotPersonne-selectCategorie" value={ligne.categorie_id} onChange={(event) => handleChange(ligne.id,event)} name="categorie_id" disabled={envoiReussi} >
+								<option value="">Catégorie</option>
+								{categories.map((categorie) => (
+									<option key={categorie.id} value={categorie.id}>{categorie.libelle}</option>
+								))}
+							</select>
+						</div>
 
-						<select className="depotPersonne-selectCategorie" value={ligne.categorie_id} onChange={(event) => handleChange(ligne.id,event)} name="categorie_id" disabled={envoiReussi} >
-							<option value="">Catégorie</option>
-							{categories.map((categorie) => (
-								<option key={categorie.id} value={categorie.id}>{categorie.libelle}</option>
-							))}
-						</select>
+						{!envoiReussi && <button type="button" className="depotPersonne-boutonAjoutObjet" onClick={ajouterLigne}><CopyPlus color="#56ADC4" /></button>}
 
 						{!envoiReussi && nouveauxObjets.length > 1 && (
 							<button type="button" className="depotPersonne-boutonRetirer" onClick={() => retirerLigne(ligne.id)}><Trash className="depotPersonne-iconTrash" color="#ffebcd" /></button>
 						)}
 
 					</section>
+
 					
 				))}
 
-					{!envoiReussi && <button type="button" className="depotPersonne-boutonAjoutObjet" onClick={ajouterLigne}>Ajouter un objet</button>}
 
 					{!envoiReussi && <button type="submit" className="depotPersonne-boutonValider" >Valider</button>}
 

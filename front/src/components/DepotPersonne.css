@@ -56,18 +56,36 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	width: 80%;
+	width: 90%;
 	margin: 0 auto;
 }
 
-.depotPersonne-donneesFormulaires {
+/* .depotPersonne-donneesFormulaires {
     display: flex;
 	flex-direction: row;
 	background-color: #56ADC4;
     border-radius: 6px;
     margin: 0.5rem;
 	width: 80%;
+} */
+
+.depotPersonne-ligneObjet {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 10px;
+	margin: 0.5rem;
+/* 	margin-left: 10%; */
 }
+
+.depotPersonne-donneesFormulaire {
+	display: flex;
+	flex-direction: row;
+	background-color: #56ADC4;
+	border-radius: 6px;
+	padding: 0px;
+}
+
 
 .depotPersonne-inputLibelle,
 .depotPersonne-inputPoids,
@@ -117,23 +135,18 @@
 
 /*================= BOUTON : Ajouter un objet =================*/
 .depotPersonne-boutonAjoutObjet {
-	background-color: #56ADC4;
-	font-family: "Barlow", sans-serif;
-	color: blanchedalmond;
-	font-style: normal;
-    font-size: 1.2rem;
-	padding: 8px;
-	margin: 8px;
-	border-radius: 6px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: white;
 	border: none;
-	height: 50px;
-	width: 150px;
-	box-shadow: 0px 3px 0px #418294;
-	transition: all 0.1s ease;
+	border-radius: 6px;
+	margin: 7px;
+	padding: 5px;
+	transition: transform 0.1s ease;
 }
 .depotPersonne-boutonAjoutObjet:active {
-	transform: translate(5px);
-	box-shadow: 0 0 0 #56ADC4;
+	transform: scale(0.9);
 }
 
 /*================= BOUTON : Valider =================*/
