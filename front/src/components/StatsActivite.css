@@ -24,7 +24,7 @@
     display: inline-block;
     width: 2rem;
     height: 2rem;
-    background-color: var(--color-carreViolet);
+    background-color: #396184;
     margin-right: 0.2rem;
     vertical-align: middle;
 }
@@ -33,7 +33,7 @@
     display: inline-block;
     width: 2rem;
     height: 2rem;
-    background-color: var(--color-carreBleu);
+    background-color: #F57B33;
     margin-right: 0.2rem;
     vertical-align: middle;
 }
