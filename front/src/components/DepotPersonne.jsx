@@ -189,7 +189,7 @@ const DepotPersonne = () => {
 						</select>
 
 						{!envoiReussi && nouveauxObjets.length > 1 && (
-							<button type="button" className="depotPersonne-boutonRetirer" onClick={() => retirerLigne(ligne.id)}><Trash  color="#ff1e1a" /></button>
+							<button type="button" className="depotPersonne-boutonRetirer" onClick={() => retirerLigne(ligne.id)}><Trash className="depotPersonne-iconTrash" color="#ffebcd" /></button>
 						)}
 
 					</section>
