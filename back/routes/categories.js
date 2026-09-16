@@ -10,6 +10,7 @@ export const routerCategories = express.Router();
  * "/api/categories": {
  *   "get": {
  *     "summary": "Liste toutes les catégories",
+ *     "tags": ["Categories"],
  *     "responses": {
  *       "200": {
  *         "description": "Liste des catégories récupérée avec succès",

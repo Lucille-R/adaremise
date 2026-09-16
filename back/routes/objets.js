@@ -10,6 +10,7 @@ export const routerObjets = express.Router();
  * "/api/objets": {
  *   "get": {
  *     "summary": "Liste les objets, avec filtre optionnel par statut et/ou catégorie",
+ *     "tags": ["Objets"],
  *     "parameters": [
  *       {
  *         "name": "statut",
@@ -71,6 +72,7 @@ routerObjets.get('/objets', async(req,res) => {
  * "/api/objets/{id}": {
  *   "get": {
  *     "summary": "Récupère le détail complet d'un objet à partir de son id",
+ *     "tags": ["Objets"],
  *     "parameters": [
  *       {
  *         "name": "id",
@@ -134,6 +136,7 @@ routerObjets.get('/objets/:id', async (req,res) => {
  * "/api/objets/{id}/statut": {
  *   "patch": {
  *     "summary": "Modifie le statut d'un objet existant",
+ *     "tags": ["Objets"],
  *     "parameters": [
  *       {
  *         "name": "id",
