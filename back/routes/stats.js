@@ -75,6 +75,33 @@ routerStats.get('/stats', async (req,res) => {
 
 });
 
+/**
+ * @swagger
+ * "/api/stats/activite": {
+ *   "get": {
+ *     "summary": "Recupere le nombre d'heures d'activite benevole (ateliers et reparations)",
+ *     "tags": ["Stats"],
+ *     "responses": {
+ *       "200": {
+ *         "description": "Statistiques d'activite recuperees avec succes",
+ *         "content": {
+ *           "application/json": {
+ *             "schema": {
+ *               "type": "object",
+ *               "properties": {
+ *                 "atelier": { "type": "number", "example": 15.5 },
+ *                 "reparation": { "type": "number", "example": 144.1 }
+ *               }
+ *             }
+ *           }
+ *         }
+ *       },
+ *       "500": { "description": "Erreur de connexion au serveur" }
+ *     }
+ *   }
+ * }
+ */
+
 routerStats.get('/stats/activite', async (req,res) => {
 
     const atelierActivite = await pool.query(`
@@ -93,6 +120,37 @@ routerStats.get('/stats/activite', async (req,res) => {
         "reparation": reparationActivite.rows[0].activite_reparation})
 });
 
+/**
+ * @swagger
+ * "/api/stats/reparation": {
+ *   "get": {
+ *     "summary": "Recupere le nombre de reparations reussies et echouees par categorie d'objet",
+ *     "tags": ["Stats"],
+ *     "responses": {
+ *       "200": {
+ *         "description": "Statistiques de reparation recuperees avec succes",
+ *         "content": {
+ *           "application/json": {
+ *             "schema": {
+ *               "type": "array",
+ *               "items": {
+ *                 "type": "object",
+ *                 "properties": {
+ *                   "libelle": { "type": "string", "example": "Mobilier" },
+ *                   "reussie": { "type": "integer", "example": 5 },
+ *                   "echouee": { "type": "integer", "example": 2 }
+ *                 }
+ *               }
+ *             }
+ *           }
+ *         }
+ *       },
+ *       "500": { "description": "Erreur de connexion au serveur" }
+ *     }
+ *   }
+ * }
+ */
+
 routerStats.get('/stats/reparation', async (req,res) => {
 
     const reparationCount = await pool.query(`
@@ -107,6 +165,36 @@ routerStats.get('/stats/reparation', async (req,res) => {
 
     res.status(200).json(reparationCount.rows);
 });
+
+/**
+ * @swagger
+ * "/api/stats/ca": {
+ *   "get": {
+ *     "summary": "Recupere le chiffre d'affaire mensuel",
+ *     "tags": ["Stats"],
+ *     "responses": {
+ *       "200": {
+ *         "description": "Chiffre d'affaire recupere avec succes",
+ *         "content": {
+ *           "application/json": {
+ *             "schema": {
+ *               "type": "array",
+ *               "items": {
+ *                 "type": "object",
+ *                 "properties": {
+ *                   "mois": { "type": "string", "example": "Avril" },
+ *                   "ca": { "type": "number", "example": 245.8 }
+ *                 }
+ *               }
+ *             }
+ *           }
+ *         }
+ *       },
+ *       "500": { "description": "Erreur de connexion au serveur" }
+ *     }
+ *   }
+ * }
+ */
 
 routerStats.get('/stats/ca', async (req,res) => {
 
