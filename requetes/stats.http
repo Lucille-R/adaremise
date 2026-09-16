@@ -6,3 +6,11 @@
 ### Apporte toute les données depuis stats - ObjetsStatut, PoidsTotal, PoidsDetourné, nbObjetRayon
 GET {{baseUrl}}/stats
 
+### Apport les temps d'activite
+GET {{baseUrl}}/stats/activite
+
+### Apport les nombre de reparation echoue et reussi par categorie
+GET {{baseUrl}}/stats/reparation
+
+### Apport les CA(chiffre d'affaire) par mois
+GET {{baseUrl}}/stats/ca

@@ -10,7 +10,7 @@
     --color-bgLight :blanchedalmond;
     --color-bgDark : #56ADC4;
     --color-textData : #F57B33;
-    --color-textLegend : rgb(78, 78, 78);
+    --color-textLegend : #4e4e4e;
 }
 
 .stats-stats {
@@ -21,8 +21,7 @@
 .stats-generalData {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    margin: 0px 0px;
+    /* justify-content: space-evenly; */
     padding-bottom: 4%;
 
         .stats-titleGenData {
@@ -72,13 +71,14 @@
     flex-direction: row;
     justify-self: center;
     align-self: center;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     background-color: blanchedalmond;
     border-radius: 0.8rem;
+    gap: 20rem;
     margin-top: 10px;
     padding: 20px;
-    width: 70%;
+    width: 100%;
 }
 
 .stats-donneeTableau {
@@ -118,4 +118,10 @@
     align-items: center;
 }
 
+
+.stats-graphSection {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr;
+}
 

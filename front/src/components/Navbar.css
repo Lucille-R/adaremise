@@ -1,19 +1,4 @@
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-:root {
-    --color-bgLight :#56ADC4;
-    --color-bgLightDesature :#7DB5C7;
-    /* --color-bgDark : rgb(60, 60, 60); */
-    --color-text : rgb(51, 241, 178);
-    --color-active : #F57B33;
-    --color-activeDesature : #FA8B48;
-}
 
 .navbar-navigation {
     display: flex;

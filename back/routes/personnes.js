@@ -11,8 +11,9 @@ export const routerPersonnes = express.Router();
  * "/api/personnes": {
  *    "get": {
  *     "summary": "Liste toutes les personnes",
- *     "responses": {
- *       "200": { "description": "Liste des personnes récupérée avec succès"}
+ *       "tags" : ["Personne"],
+ *         "responses": {
+ *           "200": { "description": "Liste des personnes récupérée avec succès"}
  *     }
  *   }
  * }

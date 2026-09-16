@@ -1,0 +1,27 @@
+.navstats-btnList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    padding-top: 4rem;
+    gap: 1rem;
+
+        .navstats-btn {
+            background-color: var(--color-bgLightDesature);
+            color: blanchedalmond;
+            border: none;
+            text-align: start;
+            height: 4rem;
+            width: 14rem;
+            border-radius: 6px;
+            padding-left: 1.25rem;
+            font-family: "Barlow", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 1.5rem;
+        }
+        
+        .navstats-btn:hover {
+            background-color: var(--color-activeDesature);
+        }
+}

@@ -1,11 +1,16 @@
 import { useState, useEffect } from "react";
 // --- On import depuis Chart les éléments nécessaire pour l'affichage des données ---
-import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip } from "chart.js";
-import { Bar } from "react-chartjs-2";
-import "./Stats.css"
+// import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip } from "chart.js";
+// import { Bar } from "react-chartjs-2";
+import "./Stats.css";
+import StatsObjets from "./StatsObjets.jsx";
+import StatsActivite from "./StatsActivite.jsx";
+import StatsReparation from "./StatsReparation.jsx";
+import StatsCA from "./StatsCA.jsx";
+import NavStats from "./NavStats.jsx"
 
 
-ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip);
+// ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip);
 
 const Stats = () => {
 
@@ -15,8 +20,8 @@ const Stats = () => {
     const [poidsTotal, setPoidsTotal] = useState(-1);
     const [nbObjetRayon, setNbObjetRayon] = useState(-1);
     const [erreur, setErreur] = useState(null);
-    const [statuts, setStatuts] = useState([]);
-    const [nbObjets, setNbObjets] = useState([]);
+    const [dataDisplay, setDataDisplay] = useState("objets")
+
 
     const chargerDonnees = async () => {
         try{
@@ -31,8 +36,6 @@ const Stats = () => {
 
             setPoidsTotal(dataJson.poidsTotal);
             setNbObjetRayon(dataJson.nbObjetRayon);
-            setStatuts(dataJson.objetsStatut.map(element => element.statut));
-            setNbObjets(dataJson.objetsStatut.map(element => element.nombre));
 
         } catch (error){
             console.error(error.message);
@@ -40,75 +43,14 @@ const Stats = () => {
         }
     }
 
-    // --- Données pour établir le graphique ---
-    const chartData = { labels: statuts, 
-                        datasets: [{ 
-                            label: "nombre", 
-                            data: nbObjets, 
-                            backgroundColor: "#7DB5C7",
-                            // --- Effect de changement de couleur lors du passage de la souris ---
-                            hoverBackgroundColor: "#F57B33" 
-                        }] 
-                      }
-
-    // --- Liste des parametre visuel pour l'histogramme ---
-    const chartOption = {
-        responsive: true, // --- Adapte a son espace parent ---
-        maintainAspectRatio: false, 
-        // --- Active la legende, le titre general et l'effet tooltip lors de hover ---
-        plugins: {
-            legend: { display: true},
-            title : { 
-                display: true, 
-                text: "Classification par statut ",
-                font: {
-                    size: 30,
-                    weight: "bold"
-                } },
-            tooltip: {
-                enabled: true,
-                displayColors: false,
-                backgroundColor: "transparent",
-                titleColor: "transparent",
-                bodyColor: "#7b501b",
-                padding: 10,
-                callbacks: {
-                    label: function(context) {
-                        return `${context.raw} objet(s)`;
-                    }
-                },
-                // --- Parametre liée aux fonts ---
-                titleFont: { size: 16 },
-                bodyFont: { size: 20 }
-            }
-        },
-        scales: {
-            // --- Parametre liée a l'axe Y ---
-            y: {
-                beginAtZero: true,
-                title: { display: false },
-                ticks: { stepSize: 1,
-                         font: { size: 18, weight: "bold" }
-                 },
-                grid: { display: false }
-            },
-            // --- Parametre liée a l'axe X ---
-            x: {
-                title: { display: false },
-                grid: { display: false },
-                ticks: { font: { size: 18, weight: "bold" }}
-            }
-        },
-        // --- Parametre pour le visuel des barres ---
-        elements: {
-            bar: { borderRadius: 4 }
-        }
-    };
-
     // --- On charge les données au chargenebt de la page ---
     useEffect(() => {
         chargerDonnees();
     }, []);
+
+    const display = (graphDisplay) => {
+        setDataDisplay(graphDisplay)
+    }
 
     // --- Gestion d'affichage de l'erreur ---
     if(erreur){
@@ -132,16 +74,19 @@ const Stats = () => {
                     <h4 className="stats-titleGenData">Poids Total Reçus </h4>
                 </article>
             </div>
-            {/* Affichage Graph */}
-            <article className="stats-chartStatus">
-                <div className="stats-chartWrapper">
-                    {/* On évite un problème d'affichage lié à l'asynchrone en attendant que le tableau ai une valeur */}
-                    {statuts.length > 0 && (
-                        <Bar data={chartData} 
-                            options={chartOption} />
-                    )}
+            <section className="stats-graphSection">
+                <div className="stats-NavStatsWrapper">
+                    <NavStats display={display} />
                 </div>
-            </article>
+                <div className="stats-statsObjetsWrapper">
+                    {dataDisplay === "objets" && <StatsObjets />}
+                    {dataDisplay === "ca" && <StatsCA />}
+                    {dataDisplay === "reparation" && <StatsReparation />}
+                    {dataDisplay === "activite" && <StatsActivite />}
+                </div>
+                <div>
+                </div>
+            </section>
         </section>
     )}
 
