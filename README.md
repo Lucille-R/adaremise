@@ -123,6 +123,6 @@ La documentation de l'API (Swagger) est disponible sur `http://localhost:3000/ap
 
 Maxence Chotard, Lucille Richard et Marin Nicolle Poussier.
 
-## 📄 Licence
+## 🎓 Contexte
 
-Projet réalisé dans un cadre pédagogique - Ada Tech School.
+Projet réalisé dans un cadre pédagogique · Ada Tech School
