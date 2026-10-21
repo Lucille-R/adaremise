@@ -1,14 +1,14 @@
 {
-  "name": "-latest",
+  "name": "adaremise",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite front",
     "dev:back": "nodemon back/server/server.js",
-    "build": "vite build",
+    "build": "vite build front",
     "lint": "oxlint",
-    "preview": "vite preview"
+    "preview": "vite preview front"
   },
   "dependencies": {
     "chart.js": "^4.5.1",
